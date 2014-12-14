@@ -1,3 +1,11 @@
+<!-- 
+<p align="center">
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/screens/screen_graph.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/screens/screen_graph.png' width='300px' alt='missing' /> </a> <br>
+<sub>Caption</sub>
+</p>
+-->
+
 # openScale wiki
 openScale is an Open Source App for Android to keep a log of your body weight, fat, water and muscle.
 
