@@ -118,24 +118,26 @@ Next step is to analyse the signals that are controlling the display. I had the 
 
 Because I couldn’t connected all display connector pins to the oscilloscope I left pin 1 and pin 2 unconnected. So I had the following pin mapping:
 
-| display pin | oscilliscope |
-|:-----------:|:------------:|
-|      3      |      D0      | 
-|      4      |      D1      |
-|      5      |      D2      |
-|      6      |      D3      |
-|      7      |      D4      |
-|      8      |      D5      |
-|      9      |      D6      |
-|      10     |      D7      |
-|      11     |      D8      |
-|      12     |      D9      |
-|      13     |      D10     |
-|      14     |      D11     |
-|      15     |      D12     |
-|      16     |      D13     |
-|      17     |      D14     |
-|      18     |      D15     |
+| display pin | oscilliscope | label      |
+|:-----------:|:------------:|:-----------|
+|      1      | not connected| Sym1:1     |
+|      2      | not connected| Sym1:2     |
+|      3      |      D0      | Seg1:1     |
+|      4      |      D1      | Seg1:2     |
+|      5      |      D2      | Seg2:1     |
+|      6      |      D3      | Seg2:2     |
+|      7      |      D4      | Seg3:1     |
+|      8      |      D5      | Seg3:2     |
+|      9      |      D6      | Seg4:1     |
+|      10     |      D7      | Seg4:2     |
+|      11     |      D8      | Sym2:1     |
+|      12     |      D9      | Sym2:2     |
+|      13     |      D10     | not used   |
+|      14     |      D11     | not used   |
+|      15     |      D12     | C3         | 
+|      16     |      D13     | C2         |
+|      17     |      D14     | C1         |
+|      18     |      D15     | C0         |
 
 The question for the reverse engineering process was how the signals will respond when a value of the display had changed? Could I find some logic behind the signal changes? As I turned on the scale the first observation was that not all pins are active and that four pins (D12-D15) had always the same repeating pattern, no matter which value was displaying. So these four pins must be the cycle pins for a serial communication. The second observation was if the first digit of the four digit scale was displaying a value D0 and D1 were active. If two digits are displaying some values then the signals D0-D3, for three digits D0-D5 and for four digits D0-D7 were active. The obvious conclusion was to display a digit on the scale a pair of two signals are used. In short I knew a command is four cycles long. I also knew that pin D0 and D1 are used for displaying the first digit. So the display controller uses 2x4 Bit = 8 Bit for representing a digit. If I can decode these 8 Bit word, I would be able decode the other signals too. The next step was to see the behaviour of the two signals D0 and D1 when different digits (0-9) are shown on the scale’s display. The best way to display each digit on the display was by pushing the up or down button of the scale to get into the selection mode of the scale. In this mode I was able to click through the values “P-01” to “P-09”. The correspondent recorded signals are shown in figure 1.12-1.20. Note that valid signals are near the right side of the signal diagram because on the left side old signals could be still visible. 
 
