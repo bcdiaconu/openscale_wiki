@@ -229,7 +229,7 @@ The question for the reverse engineering process was how the signals will respon
   </tr>
 </table>
 
-For decoding the 8 Bit word I compared the recorded signals. I first chose two numbers that differs only in one segment of the seven segment display. For example the digit 5 and 6 differs only in segment g, see figure 1.24. If you compare the corresponded signals in figure 1.16 and 1.17 you will see that only one bit on pin D1 has changed. So I knew that the cycle no. 1 bit on pin D1 was for segment g of the seven segment display. Another example was the signal difference between digit 6 (figure 1.17) and 8 (figure 1.19). Only the cycle no. 3 bit on pin D0 has changed. Therefore this bit was responsible for turning segment b on or off. After I did this kind of comparison with all digits (it’s like playing Sudoku) I finally got the following decoding table:
+For decoding the 8 Bit word I compared the recorded signals. I first chose two numbers that differs only in one segment of the seven segment display. For example the digit 5 and 6 differs only in segment g, see figure 1.24. If you compare the corresponded signals in figure 1.16 and 1.17 you will see that only one bit on pin D1 has changed. So I knew that cycle no. 1 bit on pin D1 was for segment g of the seven segment display. Another example was the signal difference between digit 6 (figure 1.17) and 8 (figure 1.19). Only cycle no. 3 bit on pin D0 has changed. Therefore this bit was responsible for turning segment b on or off. After I did this kind of comparison with all digits (it’s like playing Sudoku) I finally got the following decoding table:
 
 <table>
   <tr>
