@@ -119,7 +119,7 @@ Next step is to analyse the signals that are controlling the display. I had the 
 Because I couldn’t connected all display connector pins to the oscilloscope I left pin 1 and pin 2 unconnected. So I had the following pin mapping:
 
 | display pin | oscilliscope | label      |
-|:-----------:|:------------:|:-----------|
+|:-----------:|:------------:|:----------:|
 |      1      | not connected| Sym1:1     |
 |      2      | not connected| Sym1:2     |
 |      3      |      D0      | Seg1:1     |
