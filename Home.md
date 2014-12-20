@@ -64,7 +64,7 @@ I connected the scale's display connector to the Arduino Pro Mini as the followi
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/schematic.png" target="_blank">
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/schematic.png' width='300px' alt='missing' /> </a> <br>
-<sub>Figure 2.4: Schematic overview of the openScale project</sub>
+<sub><b>Figure 2.4: Schematic overview of the openScale project</b></sub>
 </p>
 
 ## Reverse Engineering of the scale
