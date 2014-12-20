@@ -109,7 +109,7 @@ void setup()
 }
 ```
 
-After I finished the initializing I had to read the signals in the `loop()` function. As you can see in figure 1.12-1.23 the signal width is 400kHz (2.5ms). It's much slower than the Arduino Pro Mini with 8MHz (0.000125ms). But beware using the `digitalRead` command in the Arduino library is very slow. For this reason I made a own function that reads directly the ports from the microprocessor. This also makes sure I read definitely all signals at (almost) the same time.
+After I finished the initializing I had to read the signals in the `loop()` function. As you can see in figure 1.12-1.23 the signal width is 400kHz (2.5ms). It's much slower than the Arduino Pro Mini with 8MHz (0.000125ms). But beware using the `digitalRead` command in the Arduino library is relative very slow. For this reason I made a own function that reads directly the ports from the microprocessor. This also makes sure I read definitely all signals at (almost) the same time.
 
 ```C
 ...
