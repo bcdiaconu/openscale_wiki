@@ -113,12 +113,6 @@ After I finished the initializing I had to read the signals in the `loop()` func
 
 ```C
 ...
-char port_control;
-char port_digital_pinA;
-char port_digital_pinB;
-
-int control_bit[4];
-
 int seg_raw_1_1[4];
 int seg_raw_1_2[4];
 int seg_raw_2_1[4];
@@ -145,6 +139,12 @@ void set_seg_raw(int cycle_n)
 And in the `loop()` function I read the ports and then store the signals depending on the cycle number with:
 
 ```C
+char port_control;
+char port_digital_pinA;
+char port_digital_pinB;
+
+int control_bit[4];
+
 void loop()
 {
 ...
