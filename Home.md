@@ -21,6 +21,52 @@ openScale is an Open Source App for Android to keep a log of your body weight, f
 
 ## Reading the measured values with Arduino
 
+In the previous step we had successful reverse engineered the scale's display. The next step will be to read and decode the signals with a microcontroller. I used the [Arduino Pro Mini board](http://arduino.cc/en/pmwiki.php?n=Main/ArduinoBoardProMini) (8 MHz, 3.3V) with an ATmega 328 microcontroller, see figure 2.1. For reducing the size and the power consumption the Arduino Pro Mini don't have USB on board, so I need an external USB to Serial converter for writing sketches. I bought a CP2102 USB to Serial converter, see figure 2.2 and figure 2.3. 
+
+<table border="0">
+  <tr>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/arduino_front.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/arduino_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 2.1: Arduino Pro Mini board</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/cp2102_front.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/cp2102_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 2.2: CP2102 USB to Serial converter (front)</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/cp2102_back.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/cp2102_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 2.3: CP2102 USB to Serial converter (back)</sub>
+</th>
+
+  </tr>
+</table>
+
+In the [Arduino IDE](http://arduino.cc/en/pmwiki.php?n=Main/Software) I navigated to Tools->Board and selected our "Arduino Pro or Pro Mini (3.3V, 8MHz) w/ ATmega328" and also selected under Tools->Programmer the "AVR ISP" programmer. Now I could connect the CP2102 board with the Arduino Pro Mini as follow:
+
+| CP2102 | Arduino Pro Mini |
+|:------:|:----------------:|
+|   DTR  |        DTR       |
+|   RXI  |        TXO       |
+|   TXO  |        RXI       |
+|   3V3  |        VCC       |
+|   GND  |        GND       |
+
+Note that I used 3.3V (see pin 3V3 on figure 2.3) from the CP2102 converter board and not the 5V! If I did it right I was able to program the microcontroller, for example with the blink sketch, using File->Upload. 
+
+I connected the scale's display connector to the Arduino Pro Mini as the following schematic:
+
+<p align="center">
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/schematic.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/schematic.png' width='300px' alt='missing' /> </a> <br>
+<sub>Figure 2.4: Schematic overview of the openScale project</sub>
+</p>
+
 ## Reverse Engineering of the scale
 
 First of all I had to find a suitable bathroom scale that I wanted to reverse engineer. I was searching for a cheap bathroom scale that can analyse not only my weight but also my body fat, water and muscle. The scale design should be clear and the display of the scale should have some kind of a simple seven segment display (I hoped that a simple display would be easier to reverse engineer). The [Sanitas SBF12 scale](http://www.sanitas-online.de/web/en/products/weight/SBF12.php) that I found in a department store seemed to be right for my purpose. So I bought one for only 20€ (around 25$), see figure 1.1.
