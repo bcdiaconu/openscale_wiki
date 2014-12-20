@@ -47,7 +47,7 @@ In the previous step we had successful reverse engineered the scale's display. T
   </tr>
 </table>
 
-In the [Arduino IDE](http://arduino.cc/en/pmwiki.php?n=Main/Software) I navigated to Tools->Board and selected our "Arduino Pro or Pro Mini (3.3V, 8MHz) w/ ATmega328" and also selected under Tools->Programmer the "AVR ISP" programmer. Now I could connect the CP2102 board with the Arduino Pro Mini as follow:
+In the [Arduino IDE](http://arduino.cc/en/pmwiki.php?n=Main/Software) I navigated to Tools->Board and selected the "Arduino Pro or Pro Mini (3.3V, 8MHz) w/ ATmega328" and also selected under Tools->Programmer the "AVR ISP" programmer. Now I could connect the CP2102 board with the Arduino Pro Mini as follow:
 
 | CP2102 | Arduino Pro Mini |
 |:------:|:----------------:|
@@ -66,6 +66,317 @@ I connected the scale's display connector to the Arduino Pro Mini as the followi
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/schematic.png' width='300px' alt='missing' /> </a> <br>
 <sub><b>Figure 2.4: Schematic overview of the openScale project</b></sub>
 </p>
+
+Next step is to program the Arduino Pro Mini to read the signal of the scale's display. First I set some defines in C to make the programming more clear:
+
+```C
+...
+#define SEG_1_1 4
+#define SEG_1_2 5
+#define SEG_2_1 6
+#define SEG_2_2 7
+#define SEG_3_1 8
+#define SEG_3_2 9
+#define SEG_4_1 10
+#define SEG_4_2 11
+#define UP 12
+#define C0 A0
+#define C1 A1
+#define C2 A2
+#define C3 A3
+...
+```
+
+In the `setup()` function I set the pin modes as follow:
+```C
+void setup() 
+{
+...
+  pinMode(SEG_1_1, INPUT);
+  pinMode(SEG_1_2, INPUT);
+  pinMode(SEG_2_1, INPUT);
+  pinMode(SEG_2_2, INPUT);
+  pinMode(SEG_3_1, INPUT);
+  pinMode(SEG_3_2, INPUT);
+  pinMode(SEG_4_1, INPUT);
+  pinMode(SEG_4_2, INPUT);
+  pinMode(UP, OUTPUT);
+  pinMode(C0, INPUT);
+  pinMode(C1, INPUT);
+  pinMode(C2, INPUT);
+  pinMode(C3, INPUT);
+...
+}
+```
+
+After I finished the initializing I had to read the signals in the `loop()` function. As you can see in figure 1.12-1.23 the signal width is 400kHz (2.5ms). It's much slower than the Arduino Pro Mini with 8MHz (0.000125ms). But beware using the `digitalRead` command in the Arduino library is very slow. For this reason I made a own function that reads directly the ports from the microprocessor. This also makes sure I read definitely all signals at (almost) the same time.
+
+```C
+...
+char port_control;
+char port_digital_pinA;
+char port_digital_pinB;
+
+int control_bit[4];
+
+int seg_raw_1_1[4];
+int seg_raw_1_2[4];
+int seg_raw_2_1[4];
+int seg_raw_2_2[4];
+int seg_raw_3_1[4];
+int seg_raw_3_2[4];
+int seg_raw_4_1[4];
+int seg_raw_4_2[4];
+...
+
+void set_seg_raw(int cycle_n)
+{
+  seg_raw_1_1[cycle_n] = (port_digital_pinA & (1 << 4)) ? 1 : 0;
+  seg_raw_1_2[cycle_n] = (port_digital_pinA & (1 << 5)) ? 1 : 0;
+  seg_raw_2_1[cycle_n] = (port_digital_pinA & (1 << 6)) ? 1 : 0;
+  seg_raw_2_2[cycle_n] = (port_digital_pinA & (1 << 7)) ? 1 : 0;
+  seg_raw_3_1[cycle_n] = (port_digital_pinB & (1 << 0)) ? 1 : 0;
+  seg_raw_3_2[cycle_n] = (port_digital_pinB & (1 << 1)) ? 1 : 0;
+  seg_raw_4_1[cycle_n] = (port_digital_pinB & (1 << 2)) ? 1 : 0;
+  seg_raw_4_2[cycle_n] = (port_digital_pinB & (1 << 3)) ? 1 : 0;
+}
+``` 
+
+And in the `loop()` function I read the ports and then store the signals depending on the cycle number with:
+
+```C
+void loop()
+{
+...
+  port_control = PINC;
+  port_digital_pinA = PIND;
+  port_digital_pinB = PINB;
+
+  control_bit[0] = (port_control & (1 << 0)) ? 1 : 0;
+  control_bit[1] = (port_control & (1 << 1)) ? 1 : 0;
+  control_bit[2] = (port_control & (1 << 2)) ? 1 : 0;
+  control_bit[3] = (port_control & (1 << 3)) ? 1 : 0;
+
+  if (control_bit[0] == LOW && control_bit[1] == HIGH && control_bit[2] == HIGH && control_bit[3] == HIGH)
+  {
+    set_seg_raw(0);
+
+  } 
+  else if (control_bit[0] == HIGH && control_bit[1] == LOW && control_bit[2] == HIGH && control_bit[3] == HIGH)
+  {
+    set_seg_raw(1);
+
+  } 
+  else if (control_bit[0] == HIGH && control_bit[1] == HIGH && control_bit[2] == LOW && control_bit[3] == HIGH)
+  {
+    set_seg_raw(2);
+
+  } 
+  else if (control_bit[0] == HIGH && control_bit[1] == HIGH && control_bit[2] == HIGH && control_bit[3] == LOW)
+  { 
+    set_seg_raw(3);
+
+  } 
+  else if (control_bit[0] == HIGH && control_bit[1] == HIGH && control_bit[2] == HIGH && control_bit[3] == HIGH)
+  {      
+    no_activity_cycles++;
+  }
+...
+}
+```
+
+You can find the port/pin mapping of the ATmega 328 on the [Arduino website](http://arduino.cc/en/Reference/Atmega168Hardware). For the decoding process I used the reverse engineered 8-Bit decoding table:
+```C
+char decode_seg(int seg_x[4], int seg_y[4])
+{
+  boolean b = seg_x[0];
+  boolean c = seg_x[1];
+  boolean e = seg_x[2];
+  boolean f = seg_x[3];
+  boolean a = seg_y[0];
+  boolean d = seg_y[1];
+  boolean g = seg_y[2];
+  boolean x = seg_y[3];
+
+  if (!e && !c && !b && !f &&
+    !g &&  !d && !a)
+    return ' ';
+
+  if (e && !c && b && f &&
+    g &&  d && a)
+    return '0';
+
+  if (e && !c && b && !f &&
+    !g &&  !d && !a)
+    return '1';
+
+  if (!e && c && b && f &&
+    g &&  !d && a)
+    return '2';
+
+  if (e && c && b && f &&
+    !g &&  !d && a)
+    return '3';
+
+  if (e && c && b && !f &&
+    !g &&  d && !a)
+    return '4';
+
+  if (e && c && !b && f &&
+    !g &&  d && a)
+    return '5';
+
+  if (e && c && !b && f &&
+    g &&  d && a)
+    return '6';
+
+  if (e && !c && b && !f &&
+    !g &&  !d && a)
+    return '7';
+
+  if (e && c && b && f &&
+    g &&  d && a)
+    return '8';
+
+  if (e && c && b && f &&
+    !g &&  d && a)
+    return '9';
+
+  if (!e && c && !b && !f &&
+    !g &&  !d && !a)
+    return '-';
+
+  if (!e && c && b && !f &&
+    g &&  d && a)
+    return 'P';
+
+  if (e && !c && b && !f &&
+    g &&  d && a)
+    return 'M';
+
+  if (!e && c && !b && f &&
+    g &&  d && a)
+    return 'E';   
+
+  if (!e && c && !b && !f &&
+    g &&  d && a)
+    return 'F';   
+
+  if (e && c && b && !f &&
+    g &&  d && !a)
+    return 'H';   
+
+  return -1;
+}
+``` 
+
+As you may notice I did a right shift in the decoding table, so now the used decoding table looks like:
+
+<th>
+<table>
+  <tr>
+    <th>Cycle No.<br></th>
+    <th>0<br></th>
+    <th>1<br></th>
+    <th>2</th>
+    <th>3</th>
+  </tr>
+  <tr>
+    <td>Signal B<br></td>
+    <td>a</td>
+    <td>d</td>
+    <td>g</td>
+    <td>x</td>
+  </tr>
+  <tr>
+    <td>Signal A<br></td>
+    <td>b</td>
+    <td>c</td>
+    <td>e</td>
+    <td>f</td>
+  </tr>
+</table>
+
+I don't know why I needed this shift. I am assuming that I exchanged the C1 and C3 pin on the Arduino Pro Mini!? Regardless, I could successful decoded the measured values of the scale with:
+
+```C
+char seg_value_1;
+char seg_value_2;
+char seg_value_3;
+char seg_value_4;
+
+void loop()
+{
+...
+  seg_value_1 = decode_seg(seg_raw_1_1, seg_raw_1_2);
+  seg_value_2 = decode_seg(seg_raw_2_1, seg_raw_2_2);
+  seg_value_3 = decode_seg(seg_raw_3_1, seg_raw_3_2);
+  seg_value_4 = decode_seg(seg_raw_4_1, seg_raw_4_2);
+...
+}
+```
+To make the measured values more stable against glitches I added a running median. I used the [running median library](http://playground.arduino.cc/Main/RunningMedian) by robtillaart and added following code to the loop, so that every sixth measure a median is used as a valid value.
+
+```C
+#include <RunningMedian.h>
+
+#define MAX_SAMPLE_SIZE 6
+
+RunningMedian<char, MAX_SAMPLE_SIZE> seg_samples_1;
+RunningMedian<char, MAX_SAMPLE_SIZE> seg_samples_2;
+RunningMedian<char, MAX_SAMPLE_SIZE> seg_samples_3;
+RunningMedian<char, MAX_SAMPLE_SIZE> seg_samples_4;
+
+int sample_count = 0;
+
+int measured_weight = -1;
+int measured_fat = -1;
+int measured_water = -1;
+int measured_muscle = -1;
+
+void loop()
+{
+...
+  if (seg_value_1 != -1 && seg_value_2 != -1 && seg_value_3 != -1 && seg_value_4 != -1)
+  {
+    seg_samples_1.add(seg_value_1);
+    seg_samples_2.add(seg_value_2);
+    seg_samples_3.add(seg_value_3);
+    seg_samples_4.add(seg_value_4);
+
+    sample_count++;
+  }
+
+
+  if (sample_count > MAX_SAMPLE_SIZE)
+  {
+    seg_samples_1.getMedian(seg_value_1);
+    seg_samples_2.getMedian(seg_value_2);
+    seg_samples_3.getMedian(seg_value_3);
+    seg_samples_4.getMedian(seg_value_4);
+   
+     if (seg_value_4 == ' ') {
+       measured_weight = char_to_int(seg_value_1) + char_to_int(seg_value_2)*10 + char_to_int(seg_value_3)*100;
+     }
+   
+     if (seg_value_4 == 'F') {
+       measured_fat = char_to_int(seg_value_1) + char_to_int(seg_value_2)*10 + char_to_int(seg_value_3)*100;
+     }
+     
+     if (seg_value_4 == 'H') {
+       measured_water = char_to_int(seg_value_1) + char_to_int(seg_value_2)*10 + char_to_int(seg_value_3)*100;
+     }
+     
+     if (seg_value_4 == 'M') {
+       measured_muscle = char_to_int(seg_value_1) + char_to_int(seg_value_2)*10 + char_to_int(seg_value_3)*100;
+     }
+
+    sample_count = 0; 
+  }
+...
+}
+```
+Note to save memory usage the measured values are stored as integers and not as floating points. You can see the full source code in the [openScale repository](https://raw.githubusercontent.com/oliexdev/openScale/master/arduino_mcu/openScale_MCU/openScale_MCU.ino).
 
 ## Reverse Engineering of the scale
 
@@ -185,7 +496,7 @@ Because I couldn’t connected all display connector pins to the oscilloscope I 
 |      17     |      D14     | C1         |
 |      18     |      D15     | C0         |
 
-The question for the reverse engineering process was how the signals will respond when a value of the display had changed? Could I find some logic behind the signal changes? As I turned on the scale the first observation was that not all pins are active and that four pins (D12-D15) had always the same repeating pattern, no matter which value was displaying. So these four pins must be the cycle pins for a serial communication. The second observation was if the first digit of the four digit scale was displaying a value D0 and D1 were active. If two digits are displaying some values then the signals D0-D3, for three digits D0-D5 and for four digits D0-D7 were active. The obvious conclusion was to display a digit on the scale a pair of two signals are used. In short I knew a command is four cycles long. I also knew that pin D0 and D1 are used for displaying the first digit. So the display controller uses 2x4 Bit = 8 Bit for representing a digit. If I can decode these 8 Bit word, I would be able decode the other signals too. The next step was to see the behaviour of the two signals D0 and D1 when different digits (0-9) are shown on the scale’s display. The best way to display each digit on the display was by pushing the up or down button of the scale to get into the selection mode of the scale. In this mode I was able to click through the values “P-01” to “P-09”. The correspondent recorded signals are shown in figure 1.12-1.20. Note that valid signals are near the right side of the signal diagram because on the left side old signals could be still visible. 
+The question for the reverse engineering process was how the signals would respond when a value of the display had changed? Could I find some logic behind the signal changes? As I turned on the scale the first observation was that not all pins are active and that four pins (D12-D15) had always the same repeating pattern, no matter which value was displaying. So these four pins must be the cycle pins for a serial communication. The second observation was if the first digit of the four digit scale was displaying a value D0 and D1 were active. If two digits are displaying some values then the signals D0-D3, for three digits D0-D5 and for four digits D0-D7 were active. The obvious conclusion was to display a digit on the scale a pair of two signals are used. In short I knew a command is four cycles long. I also knew that pin D0 and D1 are used for displaying the first digit. So the display controller uses 2x4 Bit = 8 Bit for representing a digit. If I can decode these 8 Bit word, I would be able decode the other signals too. The next step was to see the behaviour of the two signals D0 and D1 when different digits (0-9) are shown on the scale’s display. The best way to display each digit on the display was by pushing the up or down button of the scale to get into the selection mode of the scale. In this mode I was able to click through the values “P-01” to “P-09”. The correspondent recorded signals are shown in figure 1.12-1.20. Note that valid signals are near the right side of the signal diagram because on the left side old signals could be still visible. 
 
 <table border="0">
   <tr>
@@ -321,4 +632,4 @@ I gained a little weight a while ago, not overweighted, but I decided to do some
 
 My first intention was to buy a ready to use wireless scale. So I searched on the internet for a wireless bathroom scale that can track my weight and display my diet progress on a smartphone or tablet. I found a couple of start-ups and companies which have wireless scales, for example [FitBit Aria](http://www.fitbit.com/de/aria) , [Withings Smart Body Analyzer](http://www.withings.com/de/smart-body-analyzer.html) , [Runstatic libra](https://www.runtastic.com/shop/de/runtastic-libra-scale) , [Medisana BS-430](http://www.medisana.de/Gesundheitskontrolle/Personenwaagen/BS-430-connect-Koerperanalysewaage-HausMed.html) and [Beurer BF-800](http://www.beurer.com/web/en/products/weight/diagnostic_scales/BF-800-white). Most of the design of the wireless scales and the app design are really good but the big drawback is that (except the Beurer BF-800 scale) sends all your data directly into the cloud of each company. Beside that you lost your privacy and the high prices of the scales, you need always an internet connection. You are heavily dependent to the company servers. For example some Withings users reported that they have always a delay between weighting and seeing the result in the app. All in all I don't want to give any health data to a company. The Beurer BF-800 was the only scale that doesn't send automatically all your data to a cloud (of course it's possible with Beurer-Connect). I decided to give Beurer BF-800 a try, so I bought one. I installed the [Beurer Health Manager](https://play.google.com/store/apps/details?id=com.beurer.connect.healthmanager) on my Nexus 10 tablet and tried to connect the scale via Bluetooth with my tablet. It didn't work. My tablet has Bluetooth 3.0 and the scale works with Bluetooth 4.0 (also named as Bluetooth Smart) and it is not downwards compatible (didn't know that before). To be fair on the Beurer website is a [list of compatible smartphones](http://www.beurer.com/web/we-dokumente/gebrauchsanweisungen/list-compatible-smartphones.pdf). But the Beurer Health Manager lacks also in design and many users reported on Google Play that they are unsatisfied with the app. Furthermore I don't want to buy extra a new tablet or smartphone that has Bluetooth 4.0 for only logging my weight. So I sent the scale back. 
 
-Frustrated about the available commercial scales and the idea to have a new little project, I decided to make my own wireless bathroom scale. First of all I searched for information of similar projects. The resources that I have found are [SdCardBathroomScale](http://code.google.com/p/casainho-projects/wiki/SdCardBathroomScale) , [SmartScale](http://code.google.com/p/casainho-projects/wiki/SmartScale), [Bluetooth wireless bathroom scale](http://www.keyboardmods.com/2010/05/bluetooth-wireless-bathroom-scale-with.html), [hacking a digital bathroom scale](http://scanlime.org/2010/01/hacking-a-digital-bathroom-scale/) and the book [Arduino and Kinect Projects](http://www.apress.com/9781430241676). Both projects SdCardBathroomScale and SmartScale by casainho are really good. I wanted something similar. My goal was to have an appealing wireless scale that works with Bluetooth 3.0. All modifications of the scale should be hidden, so it appears like a normal scale. Also the constant connection to a Bluetooth device should not be required for the scale. Measured values should be temporary stored in the scale. Only if a Bluetooth device is around the scale, new measured values will transferred. Of course the power consumption of the scale and the microcontroller should be low as possible. Furthermore all data should be locally stored in the app or on the scale itself, so that the user has full control of their data. The app design should be light and simple. In addition I wanted to learn how to write an Android app from scratch. To fulfil all my requirements the  project "openScale" was born.
+Frustrated about the available commercial scales and the idea to have a new little project, I decided to make my own wireless bathroom scale. First of all I searched for information of similar projects. The resources that I have found are [SdCardBathroomScale](http://code.google.com/p/casainho-projects/wiki/SdCardBathroomScale) , [SmartScale](http://code.google.com/p/casainho-projects/wiki/SmartScale), [Bluetooth wireless bathroom scale](http://www.keyboardmods.com/2010/05/bluetooth-wireless-bathroom-scale-with.html), [hacking a digital bathroom scale](http://scanlime.org/2010/01/hacking-a-digital-bathroom-scale/) and the book [Arduino and Kinect Projects](http://www.apress.com/9781430241676). Both projects SdCardBathroomScale and SmartScale by casainho are really good. I wanted something similar. My goal was to have an appealing wireless scale that works with Bluetooth 3.0. All modifications of the scale should be hidden, so it appears like a normal scale. Also the constant connection to a Bluetooth device should not be required for the scale. Measured values should be temporary stored in the scale. Only if a Bluetooth device is around the scale, new measured values would transferred. Of course the power consumption of the scale and the microcontroller should be low as possible. Furthermore all data should be locally stored in the app or on the scale itself, so that the user has full control of their data. The app design should be light and simple. In addition I wanted to learn how to write an Android app from scratch. To fulfil all my requirements the  project "openScale" was born.
