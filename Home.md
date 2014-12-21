@@ -73,6 +73,7 @@ For changing the default parameters I had to send AT commands to the Bluetooth m
 The KEY pin has to be pulled high to enter AT mode of the HC-05 Bluetooth module. Sometimes the KEY pin is not on the breakout board. If that the case you have to solder a wire directly to pin 34 on the HC-05 module, see the [HC-05 Manual](https://github.com/oliexdev/openScale/raw/master/doc/hc_05/HC_05_Manual.pdf) for more details. The default baud rate in AT command mode is 38400 bits/s. Use the following sketch to configure the HC-05 Bluetooth module:
 
 ```C
+#include <Wire.h>
 #include <SoftwareSerial.h>
 
 SoftwareSerial BTSerial(9, 8); // RX | TX
