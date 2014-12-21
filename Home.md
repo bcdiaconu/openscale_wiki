@@ -87,8 +87,8 @@ void setup()
   digitalWrite(6, HIGH);
 
   Serial.begin(9600);
-
   Serial.println("Enter AT commands:");
+
   BTSerial.begin(38400);
 }
 
@@ -104,7 +104,7 @@ void loop()
 }
 ```
 
-If you successfully in the AT mode the HC-05 Bluetooth module LED blinks every 2 seconds. Open the Serial Monitor in the Arduino IDE under Tools->Serial Monitor. Change "no line ending " to "both NL & CR" found just beside the baud rate. Now you can send a test command with `AT` and you should receive `OK` if everything works fine. Following a short summary of the most important AT commands of the available [HC-05 AT Commands](https://github.com/oliexdev/openScale/raw/master/doc/hc_05/HC_05_AT_Commands.pdf):
+If you successfully in the AT mode the HC-05 Bluetooth module LED blinks every 2 seconds. Open the Serial Monitor in the Arduino IDE under Tools->Serial Monitor. Change "no line ending " to "both NL & CR" found just beside the baud rate. Now you can send a test command with `AT` if everything works fine you should receive a `OK`. Following a short summary of the most important AT commands of the available [HC-05 AT Commands](https://github.com/oliexdev/openScale/raw/master/doc/hc_05/HC_05_AT_Commands.pdf):
 
 | AT command | Response | Parameter | Comment |
 |:----------:|:--------:|:---------:|:-------:|
