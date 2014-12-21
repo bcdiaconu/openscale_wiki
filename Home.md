@@ -19,6 +19,104 @@ openScale is an Open Source App for Android to keep a log of your body weight, f
 
 ## Connecting a HC-05 Bluetooth module to a tablet
 
+For a wireless connection from my scale to my Nexus 10 tablet I am using a HC-05 Bluetooth 3.0 module, see figure 3.1 and figure 3.2. The HC-05 module can be operate as a master or slave device. Note the HC-06 Bluetooth module can only operate as a slave device.
+
+<table border="0">
+  <tr>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/bluetooth_front.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/bluetooth_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 3.1: HC-05 Bluetooth module (front)</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/bluetooth_back.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/bluetooth_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 3.2: HC-05 Bluetooth module  (back)</sub>
+</th>
+
+  </tr>
+</table>
+
+As I connected the module to the Arduino Pro Mini as the schematic in figure 2.4 then I already found the default device name in the paring list of my tablet. As default the device operates as a slave device with a paring code "1234" and a baud rate of 9600 bits/s. First I tested if I could send a test message from the Arduino with the following code:
+
+```C
+#include <Wire.h>
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  Serial.println("Hello World!");
+  delay(1000);
+}
+```
+
+On my Nexus 10 tablet I installed the [Bluetooth Terminal](https://play.google.com/store/apps/details?id=Qwerty.BluetoothTerminal) app by Qwerty to display the test messages. I just had to couple the two devices. Please make sure that the CP2102 is not together with the Bluetooth module to the Arduino Pro Mini connected if you are using for both devices the TX and RX pin! Both devices could be confused. Sometimes I couldn't upload a new sketch to the Arduino Pro Mini or I couldn't send a Bluetooth message. To avoid these problem I would use two different digital pins (which I don't have left) for the HC-05 Bluetooth TX and RX pin. 
+
+For changing the default parameters I had to send AT commands to the Bluetooth module. So in this case I had to connect together the Bluetooth HC-05 and the CP2101 device to the Arduino Pro Mini. To avoid the mentioned trouble I connected the Bluetooth HC-05 module for the configuration process as follow:
+
+| HC-05 | Arduino Pro Mini |
+|:-----:|:----------------:|
+|  VCC  |        VCC       |
+|  GND  |        GND       |
+|  TXD  |         9        |
+|  RXD  |         8        |
+|  KEY  |         6        |
+
+The KEY pin has to be pulled high to enter AT mode of the HC-05 Bluetooth module. Sometimes the KEY pin is not on the breakout board. If that the case you have to solder a wire directly to pin 34 on the HC-05 module, see the [HC-05 Manual](https://github.com/oliexdev/openScale/raw/master/doc/hc_05/HC_05_Manual.pdf) for more details. The default baud rate in AT command mode is 38400 bits/s. Use the following sketch to configure the HC-05 Bluetooth module:
+
+```C
+#include <SoftwareSerial.h>
+
+SoftwareSerial BTSerial(9, 8); // RX | TX
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
+
+  pinMode(6, OUTPUT);
+  digitalWrite(6, HIGH);
+
+  Serial.begin(9600);
+
+  Serial.println("Enter AT commands:");
+  BTSerial.begin(38400);
+}
+
+void loop()
+{
+  if (BTSerial.available()) {
+    Serial.write(BTSerial.read());
+  }
+
+  if (Serial.available()) {
+    BTSerial.write(Serial.read());
+  }
+}
+```
+
+If you successfully in the AT mode the HC-05 Bluetooth module LED blinks every 2 seconds. Open the Serial Monitor in the Arduino IDE under Tools->Serial Monitor. Change "no line ending " to "both NL & CR" found just beside the baud rate. Now you can send a test command with `AT` and you should receive `OK` if everything works fine. Following a short summary of the most important AT commands of the available [HC-05 AT Commands](https://github.com/oliexdev/openScale/raw/master/doc/hc_05/HC_05_AT_Commands.pdf):
+
+| AT command | Response | Parameter | Comment |
+|:----------:|:--------:|:---------:|:-------:|
+| AT | OK | None | Test command |
+| AT+VERSION? | +VERSION: <param>  OK | Version | Shows the version |
+| AT+ORGL | OK | None | Restore module to default parameters |
+| AT+NAME | OK | Bluetooth device name | Set device name |
+| AT+ROLE | OK | 0 - slave mode 1- master mode 2 - slave-loop mode | Set the device role as slave or master |
+| AT+PSWD | OK | Pairing code | Set the pairing code of the device |
+| AT+BIND | OK | Bind device address | Set the device address which is automatically connected (works only if the device role is in master mode) |
+
+Note if you want to set the bind device address to `12:34:56:ab:cd:ef`. The AT command should be `AT+BIND=1234,56,abcdef`. First I set the HC-05 Bluetooth module in the master mode and set my tablet device address with AT+BIND command. Everything works fine, the HC-05 automatically paired with my tablet, but after some reconnection’s (without a reproducible action) my tablet couldn't find any more the HC-05 Bluetooth device. Only after a full reset on the Bluetooth module with `AT+ORGL` and a full deletion in the pairing list on my tablet it works again. I couldn't figure out why this happened. But it's only occurred when the HC-05 Bluetooth module is in master mode. Therefore I switched back to the slave mode. In this mode everything works perfectly but my tablet had to act as a master device now.
+
 ## Reading the measured values with Arduino
 
 In the previous step we had successful reverse engineered the scale's display. The next step will be to read and decode the signals with a microcontroller. I used the [Arduino Pro Mini board](http://arduino.cc/en/pmwiki.php?n=Main/ArduinoBoardProMini) (8 MHz, 3.3V) with an ATmega 328 microcontroller, see figure 2.1. For reducing the size and the power consumption the Arduino Pro Mini don't have USB on board, so I need an external USB to Serial converter for writing sketches. I bought a CP2102 USB to Serial converter, see figure 2.2 and figure 2.3. 
