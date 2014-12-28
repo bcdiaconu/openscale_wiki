@@ -15,9 +15,177 @@ openScale is an Open Source App for Android to keep a log of your body weight, f
 
 ## Adding external I²C EEPROM
 
+For temporally storing the measured values, even if the power supply is disconnected, I used an external [512 Kbit I²C EEPROM 24LC512](https://github.com/oliexdev/openScale/raw/master/doc/eeprom_24lc512/24lc512_datasheet.pdf), see figure 5.2-5.3.
+
+<table border="0">
+  <tr>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/eeprom_24lc512/24lc512_schematic.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/eeprom_24lc512/24lc512_schematic.png' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 5.1: Schematic of the 24LC512 I²C EEPROM</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/eeprom_front.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/eeprom_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 5.2: I²C EEPROM module (front)</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/eeprom_back.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/eeprom_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 5.3: I²C EEPROM module  (back)</sub>
+</th>
+
+  </tr>
+</table>
+
+I soldered a breakout board like in figure 5.1 and connected it with the Arduino like in figure 2.4. Note because I set A0-A2 to GND the EEPROM had the I²C address 0x50. For the Arduino library I used the [LibraryForI2CEEPROM](http://arduino.cc/playground/Main/LibraryForI2CEEPROM) by robtillaart. 
+
+For storing the measured values I first defined a struct "scale_data".
+
+```C
+typedef struct scale_data{
+  int year;
+  byte month;
+  byte day;
+  byte hour;
+  byte minute;
+  int weight;
+  int fat;
+  int water;
+  int muscle;
+  int checksum;
+} __attribute__ ((packed));
+```
+
+The attribute `__attribute__ ((packed))` is important to avoid byte padding in this struct otherwise the contiguous writing or reading to the I²C EEPROM will not work! To reduce the amount of the required bytes I used integers (2 bytes) and not floats (4 bytes). The conversion between integers and float would I done when I send the data to the tablet. To know how many data entries are in the I²C EEPROM stored I always write/read the current data size at the EEPROM address 0. So the writing function to the I²C EEPROM looks like:
+
+```C
+#include <Wire.h>
+#include <I2C_eeprom.h>
+
+I2C_eeprom eeprom(0x50);
+
+void write_scale_data(int weight, int fat, int water, int muscle)
+{
+  int data_size = 0;
+  struct scale_data wdata;
+
+  eeprom.readBlock(0, (uint8_t*)&data_size, sizeof(data_size));
+
+  wdata.year = year();
+  wdata.month = month();
+  wdata.day = day();
+  wdata.hour = hour();
+  wdata.minute = minute();
+  wdata.weight = weight;
+  wdata.fat = fat;
+  wdata.water = water;
+  wdata.muscle = muscle;
+  wdata.checksum = calc_checksum(&wdata);
+
+  if (eeprom.writeBlock(sizeof(data_size)+data_size*sizeof(wdata), (uint8_t*)&wdata, sizeof(wdata)) != 0) {
+    Serial.println("$E$ Error writing data to eeprom");
+  }
+  
+  delay(100);
+  data_size++;
+    
+  if (eeprom.writeBlock(0, (uint8_t*)&data_size, sizeof(data_size)) != 0) {
+    Serial.println("$E$ Error writing data to eeprom");
+  }
+}
+```
+
+To check the integrity of the data I calculate a XOR checksum with the following function:
+
+```C
+int calc_checksum(struct scale_data* wdata)
+{
+  int checksum = 0;
+  
+  checksum ^= wdata->year;
+  checksum ^= wdata->month;
+  checksum ^= wdata->day;
+  checksum ^= wdata->hour;
+  checksum ^= wdata->minute;
+  checksum ^= (int)((float)wdata->weight / 10.0f);
+  checksum ^= (int)((float)wdata->fat / 10.0f);
+  checksum ^= (int)((float)wdata->water / 10.0f);
+  checksum ^= (int)((float)wdata->muscle / 10.0f);
+
+  return checksum;
+}
+```
+
+The reason why I did the wired conversion back to float and then again to integer was that I send the data to the tablet with the correct floating point value. In this way the Android app could also calculate the correct XOR checksum.
+
+To send the stored values in the I²C EEPROM I used following function:
+```C
+void send_scale_data()
+{
+  int data_size = 0;  
+  struct scale_data wdata;
+
+  eeprom.readBlock(0, (uint8_t*)&data_size, sizeof(data_size));
+  
+  Serial.print("$S$");
+  Serial.println(data_size);
+  
+  for (int i=0; i < data_size; i++)
+  {
+    eeprom.readBlock(sizeof(data_size)+i*sizeof(wdata), (uint8_t*)&wdata, sizeof(wdata));
+
+    if (wdata.checksum != calc_checksum(&wdata)) {
+      Serial.print("$E$ Wrong Checksum for data ");
+      Serial.print(i);
+      Serial.println();
+    }
+    
+      Serial.print("$D$");
+      Serial.print(i);
+      Serial.print(',');
+      Serial.print(wdata.year);
+      Serial.print(',');
+      Serial.print(wdata.month);
+      Serial.print(',');
+      Serial.print(wdata.day);
+      Serial.print(',');
+      Serial.print(wdata.hour);
+      Serial.print(',');
+      Serial.print(wdata.minute);
+      Serial.print(',');
+      Serial.print((float)wdata.weight / 10.0f);
+      Serial.print(',');
+      Serial.print((float)wdata.fat  / 10.0f);
+      Serial.print(',');
+      Serial.print((float)wdata.water / 10.0f);
+      Serial.print(',');
+      Serial.print((float)wdata.muscle  / 10.0f);
+      Serial.print(',');
+      Serial.print(wdata.checksum);
+      Serial.print('\n');
+  } 
+}
+```
+
+For clear all stored values just set the data size at I²C EEPROM address 0 to zero, like in the following code snippet:
+
+```C
+void clear_scale_data()
+{
+  int data_size = 0;
+  eeprom.writeBlock(0, (uint8_t*)&data_size, sizeof(data_size));
+}
+```
+
+New measured values will now just overwriting the old stored values.
+
 ## Setting up a RTC module
 
-I need a real time clock (RTC) module to get always the correct time and date, even if the Arduino is in deep sleep mode. First I used the [Tiny RTC I²C](https://www.google.com/search?q=tiny+rtc+i2c+module) module that has the DS1307 chip set on but somehow my Tiny RTC board lost always the time if the power supply was disconnected. I measured the battery voltage of the Tiny RTC but it was okay. I guess I ordered a faulty module. 
+I need a real time clock (RTC) module to get always the correct time and date, even if the Arduino is in deep sleep mode. First I used the [Tiny RTC I²C module](https://www.google.com/search?q=tiny+rtc+i2c+module) that has the DS1307 chip set on but somehow my Tiny RTC board lost always the time if the power supply was disconnected. I measured the battery voltage of the Tiny RTC but it was okay. I guess I ordered a faulty module. 
 
 This time I bought a different [I²C RTC module](http://www.roboter-bausatz.de/31/rtc-ds3231-echtzeituhr-modul) which has a DS3231 chip set on, see figure 4.1 and 4.2. I connected the module like in the schematic in figure 2.4.
 
@@ -39,7 +207,7 @@ This time I bought a different [I²C RTC module](http://www.roboter-bausatz.de/3
   </tr>
 </table>
 
-I used the [DS3232RTC library](https://github.com/JChristensen/DS3232RTC) by JChristensen to get the current time and date. At first I had set up the current time and date by using the example sketch "SetSerial" which comes with the library. Just send a string with this format `yy,m,d,h,m,s` over the serial monitor of the Arduino IDE.  
+I used the [DS3232RTC library](https://github.com/JChristensen/DS3232RTC) by JChristensen to get the current time and date. At first I setted up the current time and date by using the example sketch "SetSerial" which comes with the library. I just send a string with the format `yy,m,d,h,m,s` via the serial monitor of the Arduino IDE.  
 
 Now I could read the current time and date with the [Arduino Time library functions](http://playground.arduino.cc/Code/Time) like in the following code snippet:
 
