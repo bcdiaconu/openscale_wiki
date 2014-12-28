@@ -17,6 +17,68 @@ openScale is an Open Source App for Android to keep a log of your body weight, f
 
 ## Setting up a RTC module
 
+I need a real time clock (RTC) module to get always the correct time and date, even if the Arduino is in deep sleep mode. First I used the [Tiny RTC I²C](https://www.google.com/search?q=tiny+rtc+i2c+module) module that has the DS1307 chip set on but somehow my Tiny RTC board lost always the time if the power supply was disconnected. I measured the battery voltage of the Tiny RTC but it was okay. I guess I ordered a faulty module. 
+
+This time I bought a different [I²C RTC module](http://www.roboter-bausatz.de/31/rtc-ds3231-echtzeituhr-modul) which has a DS3231 chip set on, see figure 4.1 and 4.2. I connected the module like in the schematic in figure 2.4.
+
+<table border="0">
+  <tr>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/rtc_front.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/rtc_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 4.1: I²C RTC module (front)</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/rtc_back.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/rtc_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 4.2: I²C RTC module  (back)</sub>
+</th>
+
+  </tr>
+</table>
+
+I used the [DS3232RTC library](https://github.com/JChristensen/DS3232RTC) by JChristensen to get the current time and date. At first I had set up the current time and date by using the example sketch "SetSerial" which comes with the library. Just send a string with this format `yy,m,d,h,m,s` over the serial monitor of the Arduino IDE.  
+
+Now I could read the current time and date with the [Arduino Time library functions](http://playground.arduino.cc/Code/Time) like in the following code snippet:
+
+```C
+#include <Wire.h>
+#include <Time.h>
+#include <DS3232RTC.h> 
+
+void after_sleep_event()
+{
+...
+
+  setSyncProvider(RTC.get);
+  if (timeStatus() != timeSet) {
+    Serial.println("$E$ Can't sync to RTC clock!");
+  } else {
+    Serial.println("$I$ Successful sync to RTC clock");
+  }
+
+  Serial.print("$I$ Time: ");
+  Serial.print(hour());
+  Serial.write(':');
+  Serial.print(minute());
+  Serial.write(':');
+  Serial.print(second());
+  Serial.print(" Date: ");
+  Serial.print(day());
+  Serial.write('/');
+  Serial.print(month());
+  Serial.write('/');
+  Serial.print(year());
+  Serial.println();
+
+...
+}
+```
+
+The function `setSyncProvider` will sync with the I²C RTC module and needs only called once when the Arduino woke up from the sleep mode.
+
 ## Connecting a HC-05 Bluetooth module to a tablet
 
 For a wireless connection from my scale to my Nexus 10 tablet I am using a HC-05 Bluetooth 3.0 module, see figure 3.1 and figure 3.2. The HC-05 module can be operate as a master or slave device. Note the HC-06 Bluetooth module can only operate as a slave device.
@@ -208,7 +270,7 @@ void setup()
 }
 ```
 
-After I finished the initializing I had to read the signals in the `loop()` function. As you can see in figure 1.12-1.23 the signal width is 400kHz (2.5ms). It's much slower than the Arduino Pro Mini with 8MHz (0.000125ms). But beware using the `digitalRead` command in the Arduino library is relative very slow. For this reason I made a own function that reads directly the ports from the microprocessor. This also makes sure I read definitely all signals at (almost) the same time.
+After I finished the initializing I had to read the signals in the `loop()` function. As you can see in figure 1.12-1.23 the signal width is 400kHz (2.5ms). It's much slower than the Arduino Pro Mini with 8MHz (0.000125ms). But beware using the `digitalRead` command in the Arduino library is relative slow. For this reason I made a own function that reads directly the ports from the microprocessor. This also makes sure I read definitely all signals at (almost) the same time.
 
 ```C
 ...
