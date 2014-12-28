@@ -13,6 +13,149 @@ openScale is an Open Source App for Android to keep a log of your body weight, f
 
 ## Reducing the power consumption
 
+The goal of this step is reduce the power consumption as far as possible to extend the battery lifetime. The best way to do this is to bring the Arduino in sleep mode when it's not needed. To wake up the Arduino I used an external interrupt signal on pin 3 of the Arduino Pro Mini. It is connected to the first cycle clock (C0) of the display connector (see figure 2.4) because the cycle clock is only active if the scale is on. For bringing the Arduino into the sleep mode I used the [Low-Power library](https://github.com/rocketscream/Low-Power) by rocketscream. To detect when the scale is off I count all no active cycles. If it's exceed 32 cycles then I put the Arduino into sleep mode again and wait for the next interrupt event. The following code snippet implement this behaviour:
+
+```C
+#include <LowPower.h>
+
+#define WAKEUP_PIN 3
+
+#define MAX_NO_ACTIVITY_CYCLES 32
+
+int no_activity_cycles = 0;
+volatile boolean sleep_state = true;
+
+void interrupt_handler()
+{
+  sleep_state = false;
+}
+
+void setup() 
+{
+  ...
+  pinMode(WAKEUP_PIN, INPUT); 
+  ...
+}  
+
+void check_display_activity()
+{
+  if (no_activity_cycles > MAX_NO_ACTIVITY_CYCLES)
+  {
+    sleep_state = true;
+    no_activity_cycles = 0;
+  }
+
+
+  if (sleep_state == true)
+  {        
+    before_sleep_event();
+
+    attachInterrupt(1, interrupt_handler, RISING);
+    LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF); 
+    detachInterrupt(1); 
+
+    after_sleep_event();  
+  } 
+}
+
+void loop() 
+{   
+  check_display_activity(); 
+  ...
+  else if (control_bit[0] == HIGH && control_bit[1] == HIGH && control_bit[2] == HIGH && control_bit[3] == HIGH)
+  {      
+    no_activity_cycles++;
+  }
+  ...
+}
+```
+
+Make sure you detach the external interrupt with `detachInterrupt(1)` after you wake up the Arduino otherwise the interrupt handler will always be called if the clock cycle C0 is rising! I measured the power consumption of the Arduino Pro Mini board in active and sleep mode. I got the following results:
+
+|  Mode  | Power Consumption |
+|:------:|:-----------------:|
+| Active |        50mA       |
+|  Sleep |       1.5mA       |
+
+To minimize the power consumption a bit more I soldered out the power LED on the Arduino Pro Mini board. It reduced the power consumption about 1.5mA. So the final measured results are:
+
+|  Mode  | Power Consumption |
+|:------:|:-----------------:|
+| Active |        48mA       |
+|  Sleep |       0.035mA     |
+
+So in the end I could power supply the Arduino for around 3 years with the 4 AAA batteries (960mAh). To power down all external modules, like the Bluetooth, EEPROM, RTC module, while the Arduino is in sleeping mode I used an external [BC546 NPN Transistor](https://github.com/oliexdev/openScale/raw/master/doc/bc546_transistor/bc546_datasheetpdf) as a switch. I connected the transistor as in figure 6.1 or figure 2.4.
+
+<p align="center">
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/bc546_transistor/bc546_schematic.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/bc546_transistor/bc546_schematic.png' width='300px' alt='missing' /> </a> <br>
+<sub><b>Figure 6.1: Schematic of the BC546 NPN Transistor</b></sub>
+</p>
+
+So before the Arduino went to sleep mode I disable all external modules by setting pin 13 to low. I also writing (if a valid measurement exist) the measured values into the I²C EEPROM and sending all measured scale data entries via Bluetooth to my tablet with the following code snippet:
+
+```C
+#define EXT_SWITCH_PIN 13
+
+void setup()
+{
+ ...
+ pinMode(EXT_SWITCH_PIN, OUTPUT);
+  
+ digitalWrite(EXT_SWITCH_PIN, HIGH);
+}
+
+void before_sleep_event()
+{
+   Serial.println("$I$ going to sleep in 3 seconds!");
+  
+  if (measured_weight != -1 && measured_fat != -1 && measured_water != -1 && measured_muscle != -1) {
+    write_scale_data(measured_weight, measured_fat, measured_water, measured_muscle);
+    delay(100);
+  }
+  
+  send_scale_data();
+  
+  delay(3000);
+  
+  digitalWrite(EXT_SWITCH_PIN, LOW);   
+}
+```
+
+After an interrupt event occurred I enable all external modules by setting pin 13 to high. I also initializing the measured values to a defined value.
+
+```C
+#define UP 12
+
+void setup()
+{
+ ...
+  pinMode(UP, OUTPUT);
+ ...
+}
+
+void after_sleep_event()
+{
+  digitalWrite(EXT_SWITCH_PIN, HIGH);
+
+  measured_weight = -1;
+  measured_fat = -1;
+  measured_water = -1;
+  measured_muscle = -1;
+
+  delay(4000);
+  digitalWrite(UP, HIGH);
+  delay(500);
+  digitalWrite(UP, LOW);
+  
+...
+  
+  Serial.println("$I$ openScale MCU ready!");
+}
+```
+
+The impulse on pin 12 is for bringing the SBF 12 bathroom scale automatically into the "body measuring mode" otherwise I had to manually press the UP button on the bathroom scale.
+
 ## Adding external I²C EEPROM
 
 For temporally storing the measured values, even if the power supply is disconnected, I used an external [512 Kbit I²C EEPROM 24LC512](https://github.com/oliexdev/openScale/raw/master/doc/eeprom_24lc512/24lc512_datasheet.pdf), see figure 5.2-5.3.
