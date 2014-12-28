@@ -156,6 +156,8 @@ void after_sleep_event()
 
 The impulse on pin 12 is for bringing the SBF 12 bathroom scale automatically into the "body measuring mode" otherwise I had to manually press the UP button on the bathroom scale.
 
+Note in figure 2.4 that I power supply the bathroom scale with the 4 AAA batteries. So remove the bathroom scale coin cell!
+
 ## Adding external I²C EEPROM
 
 For temporally storing the measured values, even if the power supply is disconnected, I used an external [512 Kbit I²C EEPROM 24LC512](https://github.com/oliexdev/openScale/raw/master/doc/eeprom_24lc512/24lc512_datasheet.pdf), see figure 5.2-5.3.
