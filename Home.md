@@ -99,7 +99,7 @@ void write_scale_data(int weight, int fat, int water, int muscle)
 }
 ```
 
-To check the integrity of the data I calculate a XOR checksum with the following function:
+To check the integrity of the data I calculated a XOR checksum with the following function:
 
 ```C
 int calc_checksum(struct scale_data* wdata)
