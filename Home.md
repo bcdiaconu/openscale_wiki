@@ -7,9 +7,26 @@
 -->
 
 # openScale wiki
-openScale is an Open Source App for Android to keep a log of your body weight, fat, water and muscle.
 
-## Writing an Android app
+*openScale is an Open Source App for Android to keep a log of your body weight, fat, water and muscle.*
+
+<table border="0">
+  <tr>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/scale_hacked_front.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/scale_hacked_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure A: Final result of the hacked bathroom scale (front)</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/parts/scale_hacked_back.JPG" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/parts/scale_hacked_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure B: Final result of the hacked bathroom scale (back)</sub>
+</th>
+
+  </tr>
+</table>
 
 ## Reducing the power consumption
 
