@@ -1,4 +1,3 @@
-7 [Writing an Android app](https://github.com/oliexdev/openScale/wiki#writing-an-android-app) <br>
 6 [Reducing the power consumption](https://github.com/oliexdev/openScale/wiki#reducing-the-power-consumption)<br>
 5 [Adding external I²C EEPROM](https://github.com/oliexdev/openScale/wiki#adding-external-ic-eeprom)<br>
 4 [Setting up a RTC module](https://github.com/oliexdev/openScale/wiki#setting-up-a-rtc-module) <br>
