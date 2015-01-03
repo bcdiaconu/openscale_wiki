@@ -126,8 +126,8 @@ void before_sleep_event()
 {
    Serial.println("$I$ going to sleep in 3 seconds!");
   
-  if (measured_weight != -1 && measured_fat != -1 && measured_water != -1 && measured_muscle != -1) {
-    write_scale_data(measured_weight, measured_fat, measured_water, measured_muscle);
+  if (measured_user_id != -1 && measured_weight != -1 && measured_fat != -1 && measured_water != -1 && measured_muscle != -1) {
+    write_scale_data(measured_user_id, measured_weight, measured_fat, measured_water, measured_muscle);
     delay(100);
   }
   
@@ -155,6 +155,7 @@ void after_sleep_event()
 {
   digitalWrite(EXT_SWITCH_PIN, HIGH);
 
+  measured_user_id = -1;
   measured_weight = -1;
   measured_fat = -1;
   measured_water = -1;
@@ -209,6 +210,7 @@ For storing the measured values I first defined a struct "scale_data".
 
 ```C
 typedef struct scale_data{
+  byte user_id;
   int year;
   byte month;
   byte day;
@@ -230,13 +232,14 @@ The attribute `__attribute__ ((packed))` is important to avoid byte padding in t
 
 I2C_eeprom eeprom(0x50);
 
-void write_scale_data(int weight, int fat, int water, int muscle)
+void write_scale_data(int user_id, int weight, int fat, int water, int muscle)
 {
   int data_size = 0;
   struct scale_data wdata;
 
   eeprom.readBlock(0, (uint8_t*)&data_size, sizeof(data_size));
 
+  wdata.user_id = user_id;
   wdata.year = year();
   wdata.month = month();
   wdata.day = day();
@@ -268,6 +271,7 @@ int calc_checksum(struct scale_data* wdata)
 {
   int checksum = 0;
   
+  checksum ^= wdata->user_id;
   checksum ^= wdata->year;
   checksum ^= wdata->month;
   checksum ^= wdata->day;
@@ -307,7 +311,7 @@ void send_scale_data()
     }
     
       Serial.print("$D$");
-      Serial.print(i);
+      Serial.print(wdata.user_id);
       Serial.print(',');
       Serial.print(wdata.year);
       Serial.print(',');
@@ -820,6 +824,7 @@ RunningMedian<char, MAX_SAMPLE_SIZE> seg_samples_4;
 
 int sample_count = 0;
 
+int measured_user_id = -1;
 int measured_weight = -1;
 int measured_fat = -1;
 int measured_water = -1;
@@ -860,6 +865,10 @@ void loop()
      
      if (seg_value_4 == 'M') {
        measured_muscle = char_to_int(seg_value_1) + char_to_int(seg_value_2)*10 + char_to_int(seg_value_3)*100;
+     }
+
+     if (seg_value_4 == 'P') {
+       measured_user_id = char_to_int(seg_value_1) - 1;
      }
 
     sample_count = 0; 
