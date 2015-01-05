@@ -30,7 +30,7 @@
 
 ## Reducing the power consumption
 
-The goal of this step is reduce the power consumption as far as possible to extend the battery lifetime. The best way to do this is to bring the Arduino in sleep mode when it's not needed. To wake up the Arduino I used an external interrupt signal on pin 3 of the Arduino Pro Mini. It is connected to the first cycle clock (C0) of the display connector (see figure 2.4) because the cycle clock is only active if the scale is on. For bringing the Arduino into the sleep mode I used the [Low-Power library](https://github.com/rocketscream/Low-Power) by rocketscream. To detect when the scale is off I count all no active cycles. If it's exceed 32 cycles then I put the Arduino into sleep mode again and wait for the next interrupt event. The following code snippet implement this behaviour:
+The goal of this step is to reduce the power consumption as far as possible to extend the battery lifetime. The best way to do this is to bring the Arduino in sleep mode when it's not needed. To wake up the Arduino I used an external interrupt signal on pin 3 of the Arduino Pro Mini. It is connected to the first cycle clock (C0) of the display connector (see figure 2.4) because the cycle clock is only active if the scale is on. For bringing the Arduino into the sleep mode I used the [Low-Power library](https://github.com/rocketscream/Low-Power) by rocketscream. To detect when the scale is off I count all no active cycles. If it's exceed 32 cycles then I put the Arduino into sleep mode again and wait for the next interrupt event. The following code snippet implement this behaviour:
 
 ```C
 #include <LowPower.h>
