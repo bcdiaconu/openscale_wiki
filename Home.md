@@ -8,7 +8,7 @@
 
 # openScale wiki
 
-*openScale is an Open Source App for Android to keep a log of your body weight, fat, water and muscle.*
+*openScale is an Open Source app to keep a log of your weight, body fat, water percentage and muscle percentage.*
 
 <table border="0">
   <tr>
