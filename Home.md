@@ -10,7 +10,11 @@
 
 *openScale is an Open Source app to keep a log of your weight, body fat, water percentage and muscle percentage.*
 
-<table border="0">
+<p align="center">
+Please select one scale for further information.
+</p>
+
+<table border="0" align="center">
   <tr>
 
 <th>
