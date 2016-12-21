@@ -1,5 +1,11 @@
 # Xiaomi Bluetooth 4.x Mi Scale
 
+<p align="center">
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/mi_scale/miscale.jpg" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/mi_scale/miscale.jpg' width='300px' alt='missing' /> </a> <br>
+<sub>Xiaomi Mi Scale (front)</sub>
+</p>
+
 ## Xiaomi Mi Scale Reverse Engineering
 
 Some of my relative bought a [Xiaomi Mi Scale](http://www.mi.com/en/scale/). After a while I had the idea to buy one for myself and give it a try to reverse engineer the Bluetooth 4.x protocol (also known as Smart Bluetooth). First of all I searched on the internet for information. Luckily I found some information about the [Bluetooth protocol](https://wiki.gentoo.moe/wiki/Mi-scale) by perillamint and there was already an Android implementation [OpenXiaomiScale](https://github.com/Mnkai/OpenXiaomiScale) by Mnkai.
@@ -32,6 +38,12 @@ But be aware that the weight date and time is only valid if the stabilized flag 
 Unfortunately I could only receive the weight data if a user was on the scale and a connection was established. I didn't have access to the RAM of the Mi Scale were the history weight data was stored. Now the complicated part of the reverse engineering started. I had to capture and to analyse the Bluetooth transmission between the Mi Scale and the original [Mi Fit App](https://play.google.com/store/apps/details?id=com.xiaomi.hm.health).
 
 For capturing the transmission I turned on the 'Bluetooth HCI Snoop Log' under the developer options on my smartphone and started the Mi Fit App. Make sure you turn off your Bluetooth before your turn on the log and if you want to turn it off do it in reverse order. For the analysing step I opened the saved log with [wireshark](https://www.wireshark.org/). 
+
+<p align="center">
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/mi_scale/wireshark_init.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/mi_scale/wireshark_init.png' width='600px' alt='missing' /> </a> <br>
+<sub>Analysing initialization process with wireshark</sub>
+</p>
 
 You will find a lot of unnecessary transmissions but to find the important operations I searched for the hex value 'E0 07' (year 2016 in little endian format) because I knew that every weight data contains the date and time. I found a lot of data package that was sending from the Mi Scale to the App that looks like the above weight data. The interesting part was that before the packages were send the App sends a write command to the scale with the value '0x02'. That must be the command to get the history data. 
 
