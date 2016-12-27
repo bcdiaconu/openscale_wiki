@@ -28,4 +28,4 @@
   </tr>
 </table>
 
-******_Please select one scale for further information_******
+******_Please select a scale for further information_******
