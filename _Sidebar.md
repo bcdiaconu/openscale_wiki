@@ -6,5 +6,5 @@
   - [Reading the measured values with Arduino](https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale#reading-the-measured-values-with-arduino)<br>
   - [Reverse Engineering of the scale](https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale#reverse-engineering-of-the-scale)<br>
   - [How its started ...](https://github.com/oliexdev/openScale/wiki#how-its-started-)
-2. [Xiaomi Bluetooth 4.x Mi Scale] (https://github.com/oliexdev/openScale/wiki/Xiaomi-Bluetooth-Mi-Scale)
-  - [Xiaomi Mi Scale Reverse Engineering](https://github.com/oliexdev/openScale/wiki/Xiaomi-Bluetooth-Mi-Scale#xiaomi-mi-scale-reverse-engineering)
+2. [Xiaomi Bluetooth 4.x Mi Scale](https://github.com/oliexdev/openScale/wiki/Xiaomi-Bluetooth-Mi-Scale)
+ - [Xiaomi Mi Scale Reverse Engineering](https://github.com/oliexdev/openScale/wiki/Xiaomi-Bluetooth-Mi-Scale#xiaomi-mi-scale-reverse-engineering)
