@@ -37,7 +37,7 @@ But be aware that the weight date and time is only valid if the stabilized flag 
 
 Unfortunately I could only receive the weight data if a user was on the scale and a connection was established. I didn't have access to the RAM of the Mi Scale were the history weight data was stored. Now the complicated part of the reverse engineering started. I had to capture and to analyse the Bluetooth transmission between the Mi Scale and the original [Mi Fit App](https://play.google.com/store/apps/details?id=com.xiaomi.hm.health).
 
-For capturing the transmission I turned on the `Bluetooth HCI Snoop Log` under the developer options on my smartphone and started the Mi Fit App. Make sure you turn off your Bluetooth before your turn on the log and if you want to turn it off do it in reverse order. For the analysing step I opened the saved log with [wireshark](https://www.wireshark.org/). 
+For capturing the transmission I turned on the `Bluetooth HCI Snoop Log` under the developer options on my smartphone and started the Mi Fit App. Make sure you turn off your Bluetooth before your turn on the log and if you want to turn it off do it in reverse order. For the analysing step I opened the saved log with [wireshark](https://www.wireshark.org/). Please note that you should use a version > 1.10. The recent version supported Bluetooth much better!
 
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/mi_scale/wireshark_init.png" target="_blank">
@@ -59,9 +59,21 @@ But I didn't know on which Bluetooth Service and Characteristic it was send. So 
 
 You can find further descriptions of the standard services and characteristics at the official [Bluetooth specification](https://www.bluetooth.com/specifications/gatt/services) website.
 
-The weight scale service was of course the interesting part of it. we already know how the weight measurement characteristic works from the above information but there was also a custom characteristic (0x2a2f) available at which we can enable an indication flag and write some values. So I turned on the notification flag and wrote the value `0x02` to this characteristic. Now I received the history weight data of the Mi Scale. But I got two weight data at once so I had to split them up.
+The weight scale service was of course the interesting part of it. we already know how the weight measurement characteristic works from the above information but there was also a custom characteristic (`0x2a2f`) available at which we can enable an indication flag and write some values. So I turned on the notification flag and wrote the value `0x02` to this characteristic. Now I received the complete history weight data of the Mi Scale. But I got two weight data at once so I had to split them up.
 
-I thought I was finished but if you take out the scale batteries and but them back you have to initialized the Mi Scale otherwise the date and time is wrong and the weight measurement history is not saved. To do this I had to capture and analyse the initialization process between the Mi Fit App and the Mi Fit Scale again. After some headache I found out that you can enable the history weight measurement with the following magic bytes `0x01 0x96 0x8a 0xbd 0x62` but before you have to enable the history weight measurement indication flag. To set the current date and time on the Mi Scale you have to send a write command to the Current Time Characteristics (2a2b) with the following byte order:
+To get only the recently saved history weight data, send following command process to custom characteristic  (`0x2a2f`):
+1. Set notification on for weight measurement history 
+2. Write value `0x01 0xFF 0xFF 0xFF 0xFF` on characteristic (You will receive `0x01 0x?? 0xFF 0xFF 0xFF 0xFF` via notification. ?? is the amount of new history data)
+3. Set notification off for weight measurement history 
+4. Set notification on for weight measurement history 
+5. Write value `0x02` to invoke receiving the recently saved history data
+
+You will be notify with a stop command `0x03` then you have to do the following clean up procedure.
+
+1. Send back stop command by writing value `0x03` on characteristic
+2. Write value `0x04 0xFF 0xFF 0xFF 0xFF` on characteristic to acknowledge that you received the recently saved history data
+
+I thought I was finished but if you take out the scale batteries and but them back you have to initialized the Mi Scale otherwise the date and time is wrong and the weight measurement history is not saved. To do this I had to capture and analyse the initialization process between the Mi Fit App and the Mi Fit Scale again. After some headache I found out that you can enable the history weight measurement with the following magic bytes `0x01 0x96 0x8a 0xbd 0x62` but before you have to enable the history weight measurement indication flag. To set the current date and time on the Mi Scale you have to send a write command to the Current Time Characteristics (`0x2a2b`) with the following byte order:
 
 | byte | value                |
 |------|----------------------|
