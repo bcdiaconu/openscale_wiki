@@ -1,8 +1,8 @@
 # Medisana BS444 scale
 
 <p align="center">
-<a href="https://github.com/oliexdev/openScale/raw/master/doc/mi_scale/medisana_bs444.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/mi_scale/medisana_bs444.png' width='300px' alt='missing' /> </a> <br>
+<a href="https://github.com/oliexdev/openScale/blob/master/doc/medisana_bs444/medisana_bs444.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/medisana_bs444/medisana_bs444.png' width='300px' alt='missing' /> </a> <br>
 <sub>Medisana BS444 (front)</sub>
 </p>
 
