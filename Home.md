@@ -40,7 +40,7 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/sanitas_sbf70/sanitas_sbf70.jpg' width='200px' alt='image missing' /> <br>
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/sanitas_sbf70/sanitas_sbf70.jpg' width='280px' alt='image missing' /> <br>
 <sub>Sanitas SBF70</sub>
 </th>
 
