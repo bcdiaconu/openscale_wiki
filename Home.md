@@ -45,6 +45,20 @@ _Please select a scale for further information_
 </th>
 
   </tr>
+
+  <tr>
+
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/digoo/Digoo%20DG-S038H.jpeg' width='250px' alt='image missing' /> <br>
+<sub>Digoo DG-S038H</sub>
+</th>
+
+<th>
+<br>
+<sub></sub>
+</th>
+
+  </tr>
 </table>
 
 ## How to reverse engineer a Blueeoth 4.x scale
