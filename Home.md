@@ -54,8 +54,8 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<br>
-<sub></sub>
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/yunmai_mini/yunmai_mini.jpg' width='250px' alt='image missing' /> <br>
+<sub>Yunmai Mini</sub>
 </th>
 
   </tr>
