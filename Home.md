@@ -57,6 +57,18 @@ _Please select a scale for further information_
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/yunmai_mini/yunmai_mini.jpg' width='250px' alt='image missing' /> <br>
 <sub>Yunmai Mini</sub>
 </th>
+</tr>
+
+<tr>
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/excelvan_cf369ble/excelvan_cf369ble.jpg' width='250px' alt='image missing' /> <br>
+<sub>Excelvan CF369BLE</sub>
+</th>
+
+<th>
+<br>
+<sub></sub>
+</th>
 
   </tr>
 </table>
