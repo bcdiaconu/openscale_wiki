@@ -1,5 +1,3 @@
-# Xiaomi Bluetooth 4.x Mi Scale
-
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg" target="_blank">
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg' width='300px' alt='missing' /> </a> <br>
