@@ -12,4 +12,4 @@
 
 * [Supported scales in openScale](https://github.com/oliexdev/openScale/wiki/Reversed-Engineered-scales-in-openScale)
 * [Implemented body metric estimations](https://github.com/oliexdev/openScale/wiki/Body-metric-estimations)
-* [Frequently Asked Questions (FAQ)](https://github.com/oliexdev/openScale/wiki/FAQ)
+* [Frequently Asked Questions (FAQ)](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ))
