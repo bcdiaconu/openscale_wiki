@@ -1,4 +1,3 @@
-## How to reverse engineer a Blueeoth 4.x scale
 The general procedure of reverse engineering a Bluetooth 4.x scale is as follow:
 
 #### 1. Acquiring some Bluetooth traffic
