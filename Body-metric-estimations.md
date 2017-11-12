@@ -93,7 +93,7 @@ Female: -26.6224 + (0.262513 * BODY_HEIGHT) + (0.232948 * WEIGHT)</td>
 <td>"Estimated lean body mass as an index for normalization of body fluid volumes in humans" in Am J Physiol. 1984 Oct;247(4 Pt 2):F632-6.</td>
 <td> 
 Male: (0.4071 * WEIGHT) + (0.267 * BODY_HEIGHT) - 19.2 <br>
-Female: (0.252f * WEIGHT) + (0.473f * BODY_HEIGHT) - 48.3
+Female: (0.252 * WEIGHT) + (0.473 * BODY_HEIGHT) - 48.3
 </td>
 </tr>
 <tr>
