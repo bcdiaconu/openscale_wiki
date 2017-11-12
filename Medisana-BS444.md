@@ -1,5 +1,3 @@
-# Medisana BS444 scale
-
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.png" target="_blank">
 <img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.png' width='300px' alt='missing' /> </a> <br>
