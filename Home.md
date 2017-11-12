@@ -10,6 +10,6 @@
 
 *openScale is an open source app to keep a log of your weight, body fat, water percentage and muscle percentage.*
 
-* [Supported scales in openScale](https://github.com/oliexdev/openScale/wiki/Reversed-Engineered-scales-in-openScale)
+* [Supported scales in openScale](https://github.com/oliexdev/openScale/wiki/Supported-scales-in-openScale)
 * [Implemented body metric estimations](https://github.com/oliexdev/openScale/wiki/Body-metric-estimations)
 * [Frequently Asked Questions (FAQ)](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ))
