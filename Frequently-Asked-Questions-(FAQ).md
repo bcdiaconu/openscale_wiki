@@ -1,5 +1,3 @@
-# FAQ
-
 * [My scale xyz is not supported why?](https://github.com/oliexdev/openScale/wiki/FAQ/_edit#my-scale-xyz-is-not-supported-why)
 * [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](https://github.com/oliexdev/openScale/wiki/FAQ/_edit#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
 * [Why is my language xyz is missing or incomplete?](https://github.com/oliexdev/openScale/wiki/FAQ/_edit#why-is-my-language-xyz-is-missing-or-incomplete)
