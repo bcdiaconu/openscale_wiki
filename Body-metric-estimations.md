@@ -1,5 +1,3 @@
-# Body metric estimations
-
 Following are body metric estimations that are implemented in openScale based on scientific publications
 
 ## Body fat estimation
