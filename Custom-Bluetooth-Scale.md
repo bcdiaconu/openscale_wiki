@@ -5,9 +5,6 @@
 <sub>Caption</sub>
 </p>
 -->
-
-# Custom Bluetooth 3.x Scale
-
 <table border="0">
   <tr>
 
