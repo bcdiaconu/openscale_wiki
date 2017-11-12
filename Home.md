@@ -8,7 +8,7 @@
 
 # openScale wiki
 
-*openScale is an open source app to keep a log of your weight, body fat, water percentage and muscle percentage.*
+*openScale is an open source app which support various Bluetooth scales to keep log of your body metrics.*
 
 * [Supported scales in openScale](https://github.com/oliexdev/openScale/wiki/Supported-scales-in-openScale)
 * [Implemented body metric estimations](https://github.com/oliexdev/openScale/wiki/Body-metric-estimations)
