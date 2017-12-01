@@ -5,7 +5,7 @@
 
 ## My scale xyz is not supported why?
 
-I don't own every scale. But openScale is open source and lives from the open source community if you want to help you could try to reverse engineer your scale by analysing the Bluetooth 4.x protocol between your scale and the original vendor app, see [here](https://github.com/oliexdev/openScale/wiki/How-to-reverse-engineer-a-Blueeoth-4.x-scale) for further information. If you understand the protocol then it is not complicated to implement it into openScale.
+I don't own every scale. But openScale is open source and lives from the open source community if you want to help you could try to reverse engineer your scale by analysing the Bluetooth 4.x protocol between your scale and the original vendor app, see [here](https://github.com/oliexdev/openScale/wiki/How-to-reverse-engineer-a-Bluetooth-4.x-scale) for further information. If you understand the protocol then it is not complicated to implement it into openScale.
 
 ## Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?
 
