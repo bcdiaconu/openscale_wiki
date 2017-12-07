@@ -70,7 +70,7 @@
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
-<td>&nbsp;</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Xiaomi Mi scale v2</td>
@@ -78,6 +78,13 @@
 <td align="center">n/a</td>
 <td align="center">o</td>
 <td>Only the weight are supported by openScale. The rest of the body metrics are currently not supported because of the not transparent impedance calculation by the company</td>
+</tr>
+<tr>
+<td>Exingtech Y1</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
 </tr>
 </table>
 &#10003; : supported in openScale <br>
@@ -159,6 +166,18 @@ _Please select a scale for further information_
 <br>
 <img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/mi_scalev2.jpg' width='250px' alt='image missing' /> <br>
 <sub>Xiaomi Mi scale v2</sub>
+</th>
+
+  </tr>
+<tr>
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/exingtech_y1.jpg' width='250px' alt='image missing' /> <br>
+<sub>Exingtech Y1</sub>
+</th>
+
+<th>
+<br>
+<sub></sub>
 </th>
 
   </tr>
