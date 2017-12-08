@@ -1,7 +1,7 @@
-* [My scale xyz is not supported why?](https://github.com/oliexdev/openScale/wiki/FAQ/_edit#my-scale-xyz-is-not-supported-why)
-* [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](https://github.com/oliexdev/openScale/wiki/FAQ/_edit#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
-* [Why is my language xyz is missing or incomplete?](https://github.com/oliexdev/openScale/wiki/FAQ/_edit#why-is-my-language-xyz-is-missing-or-incomplete)
-* [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](https://github.com/oliexdev/openScale/wiki/FAQ/_edit#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
+* [My scale xyz is not supported why?](https://github.com/oliexdev/openScale/wiki/FAQ/#my-scale-xyz-is-not-supported-why)
+* [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](https://github.com/oliexdev/openScale/wiki/FAQ/#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
+* [Why is my language xyz is missing or incomplete?](https://github.com/oliexdev/openScale/wiki/FAQ/#why-is-my-language-xyz-is-missing-or-incomplete)
+* [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](https://github.com/oliexdev/openScale/wiki/FAQ/#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
 
 ## My scale xyz is not supported why?
 
