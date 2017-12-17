@@ -23,7 +23,7 @@
 <td>No data on the scale is ever deleted</td>
 </tr>
 <tr>
-<td>Medisana BS444 scale</td>
+<td>Medisana BS444</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -81,6 +81,13 @@
 </tr>
 <tr>
 <td>Exingtech Y1</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Beurer BF700/800</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -176,8 +183,8 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<br>
-<sub></sub>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/beurer_bf700.jpg' width='300px' alt='image missing' /> <br>
+<sub>Beurer BF700/800</sub>
 </th>
 
   </tr>
