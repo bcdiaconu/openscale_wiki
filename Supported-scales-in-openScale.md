@@ -93,6 +93,13 @@
 <td align="center">&#10003;</td>
 <td>-</td>
 </tr>
+<tr>
+<td>Silvercrest SBF75</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
+</tr>
 </table>
 &#10003; : supported in openScale <br>
 o : supported by the scale but still needs to be reverse engineered<br>
@@ -185,6 +192,19 @@ _Please select a scale for further information_
 <th>
 <img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/beurer_bf700.jpg' width='300px' alt='image missing' /> <br>
 <sub>Beurer BF700/800</sub>
+</th>
+
+  </tr>
+
+<tr>
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/silvercrest_sbf75.jpg' width='250px' alt='image missing' /> <br>
+<sub>Silvercrest SBF75</sub>
+</th>
+
+<th>
+<br>
+<sub></sub>
 </th>
 
   </tr>
