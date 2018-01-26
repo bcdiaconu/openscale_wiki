@@ -1,3 +1,7 @@
+## How to support your scale
+
+If you want to help to support your Bluetooth scale please see [here](https://github.com/oliexdev/openScale/wiki/How-to-reverse-engineer-a-Bluetooth-4.x-scale) for further information.
+
 ## Overview
 
 <table>
@@ -32,7 +36,7 @@
 <tr>
 <td>Sanitas SBF70</td>
 <td align="center">&#10003;</td>
-<td align="center">n/a</td>
+<td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td>assigned user name on the scale and in openScale have to be the same, see 
 <a href="https://github.com/oliexdev/openScale/wiki/FAQ/_edit#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
@@ -95,6 +99,14 @@
 </tr>
 <tr>
 <td>Silvercrest SBF75</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10003;</td>
+<td align="center">&#10003;</td>
+<td>assigned user name on the scale and in openScale have to be the same, see 
+<a href="https://github.com/oliexdev/openScale/wiki/FAQ/_edit#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
+</tr>
+<tr>
+<td>Runtastic Libra</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -204,7 +216,7 @@ _Please select a scale for further information_
 
 <th>
 <br>
-<sub></sub>
+<sub>Runtastic Libra</sub>
 </th>
 
   </tr>
