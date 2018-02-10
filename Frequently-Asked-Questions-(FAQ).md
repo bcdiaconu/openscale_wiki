@@ -14,7 +14,9 @@ Personally I don't want to synchronise any health data to a company for privacy 
 
 ## Why is my language xyz is missing or incomplete?
 
-I don't speak every language. If your language is missing or incomplete please translate the [strings.xml](https://github.com/oliexdev/openScale/blob/master/android_app/app/src/main/res/values/strings.xml) into your language and then create a pull request on GitHub or send it to [olie.xdev@googlemail.com](mailto:olie.xdev@googlemail.com).
+I don't speak every language. If your language is missing or incomplete please translate the [strings.xml](https://github.com/oliexdev/openScale/blob/master/android_app/app/src/main/res/values/strings.xml) into your language and then create a pull request on GitHub or use [Weblate](https://hosted.weblate.org/engage/openscale/?utm_source=widget) to translate the app. The current translation status for openScale is as follow:
+
+[![Translation status](https://hosted.weblate.org/widgets/openscale/-/multi-auto.svg)](https://hosted.weblate.org/engage/openscale/?utm_source=widget)
 
 ## How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?
 
