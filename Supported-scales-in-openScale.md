@@ -112,6 +112,13 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">&#10003;</td>
 <td>-</td>
 </tr>
+<tr>
+<td>Hesley (Yunchen)</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
+</tr>
 </table>
 &#10003; : supported in openScale <br>
 o : supported by the scale but still needs to be reverse engineered<br>
@@ -217,6 +224,19 @@ _Please select a scale for further information_
 <th>
 <br>
 <sub>Runtastic Libra</sub>
+</th>
+
+  </tr>
+
+<tr>
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/hesley.jpg' width='250px' alt='image missing' /> <br>
+<sub>Hesley (Yunchen) scale</sub>
+</th>
+
+<th>
+<br>
+<sub></sub>
 </th>
 
   </tr>
