@@ -119,6 +119,13 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">&#10003;</td>
 <td>-</td>
 </tr>
+<tr>
+<td>iHealth HS3</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">n/a</td>
+<td>-</td>
+</tr>
 </table>
 &#10003; : supported in openScale <br>
 o : supported by the scale but still needs to be reverse engineered<br>
@@ -235,8 +242,8 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<br>
-<sub></sub>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/ihealth_hs3.jpg' width='300px' alt='image missing' /> <br>
+<sub>iHealth HS3</sub>
 </th>
 
   </tr>
