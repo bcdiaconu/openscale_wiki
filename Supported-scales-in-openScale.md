@@ -229,7 +229,7 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<br>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/runtastic.jpg' width='300px' alt='image missing' /> <br>
 <sub>Runtastic Libra</sub>
 </th>
 
