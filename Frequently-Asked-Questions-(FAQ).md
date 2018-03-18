@@ -2,7 +2,8 @@
 * [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
 * [Why is my language xyz is missing or incomplete?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#why-is-my-language-xyz-is-missing-or-incomplete)
 * [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
-* [Which scale can you recommend?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-%28FAQ%29/_edit#which-scale-can-you-recommend)
+* [Which scale can you recommend?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-%28FAQ%29#which-scale-can-you-recommend)
+* [Why do openScale needs permission to the coarse location?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-%28FAQ%29#why-do-openscale-needs-permission-to-the-coarse-location)
 
 ## My scale xyz is not supported why?
 
@@ -25,3 +26,7 @@ Probably you have user names assigned by the vendors app "health coach" that are
 ## Which scale can you recommend?
 
 As I don't own all scales by myself I can't really say which works the best with openScale but in [issue #96](https://github.com/oliexdev/openScale/issues/96) I wrote some thoughts which you may consider in your decision.
+
+## Why do openScale needs permission to the coarse location?
+
+The answer is simple because the Android API >= 6.0 needs access to the coarse location to search for Bluetooth devices. The App openScale doesn't read your location at any time. Read the official [Android Bluetooth Developer Guide](https://developer.android.com/guide/topics/connectivity/bluetooth-le.html#permissions) or read the [Android 6.0 Changelog](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-hardware-id) for a more technical description.
