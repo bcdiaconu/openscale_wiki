@@ -91,9 +91,9 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td>-</td>
 </tr>
 <tr>
-<td>Beurer BF700/800</td>
+<td>Beurer BF700/710/800</td>
 <td align="center">&#10003;</td>
-<td align="center">n/a</td>
+<td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td>-</td>
 </tr>
