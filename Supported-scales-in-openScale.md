@@ -247,4 +247,13 @@ _Please select a scale for further information_
 </th>
 
   </tr>
+<tr>
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/beurer_bf710.jpg' width='300px' alt='image missing' /> <br>
+<sub>Beurer BF710</sub>
+</th>
+
+  </tr>
+
+<tr>
 </table>
