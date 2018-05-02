@@ -101,4 +101,9 @@ Female: (0.252 * WEIGHT) + (0.473 * BODY_HEIGHT) - 48.3
 Male: (0.32810 * WEIGHT) + (0.33929 * BODY_HEIGHT) - 29.5336 <br>
 Female: (0.29569 * WEIGHT) + (0.41813 * BODY_HEIGHT) - 43.2933</td>
 </tr>
+<tr>
+<td>Weight - Body fat</td>
+<td>Set lean body mass by subtracting the measured/estimated body fat from the weight.</td>
+<td>WEIGHT - BODY_FAT</td>
+</tr>
 </table>
