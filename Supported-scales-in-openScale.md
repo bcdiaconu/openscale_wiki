@@ -126,6 +126,12 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">n/a</td>
 <td>-</td>
 </tr>
+<td>Easy Home 64050</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
+</tr>
 </table>
 &#10003; : supported in openScale <br>
 o : supported by the scale but still needs to be reverse engineered<br>
@@ -253,6 +259,10 @@ _Please select a scale for further information_
 <sub>Beurer BF710</sub>
 </th>
 
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/easy_home_64050.jpg' width='300px' alt='image missing' /> <br>
+<sub>Easy Home 64050</sub>
+</th>
   </tr>
 
 <tr>
