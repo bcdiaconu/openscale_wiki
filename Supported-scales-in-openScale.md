@@ -27,7 +27,7 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td>No data on the scale is ever deleted</td>
 </tr>
 <tr>
-<td>Medisana BS444</td>
+<td>Medisana BS444/BS440</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -164,7 +164,7 @@ _Please select a scale for further information_
 
 <th>
 <a href="https://github.com/oliexdev/openScale/wiki/Medisana-BS444">
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.png' width='250px' alt='image missing' /> </a> <br>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.jpg' width='250px' alt='image missing' /> </a> <br>
 <sub><a href="https://github.com/oliexdev/openScale/wiki/Medisana-BS444">Medisana BS444 scale</a></sub>
 </th>
 
@@ -266,4 +266,11 @@ _Please select a scale for further information_
   </tr>
 
 <tr>
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs440.jpg' width='300px' alt='image missing' /> <br>
+<sub>Medisana BS440</sub>
+</th>
+
+</tr>
+
 </table>
