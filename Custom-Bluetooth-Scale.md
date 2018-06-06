@@ -23,6 +23,31 @@
   </tr>
 </table>
 
+## Support for Bluetooth 4.x
+
+Nowadays all smartphones supports Bluetooth 4.x and not Bluetooth 3.x anymore, so I replaced the HC-05 Bluetooth 3.x module with the HC-10 Bluetooth module, see figure 7.1 and figure 7.2. Be aware that there are different HC-10 modules that have different subsets of AT commands. My used version is called [HM-10S-A](http://www.jnhuamao.cn/bluetooth.asp).
+
+<table border="0">
+  <tr>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_front.jpg" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_front.jpg' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 7.1: HC-10 Bluetooth 4.x module (front)</sub>
+</th>
+
+<th>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_back.jpg" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_back.jpg' width='250px' alt='image missing' /> </a> <br>
+<sub>Figure 7.2: HC-10 Bluetooth 4.x module (back)</sub>
+</th>
+
+  </tr>
+</table>
+
+Luckily, we don't need to change anything because we can use the same pins as for the HC-05. For the HC-10 configuration we can also use the same Arduino sketch and parameters like in the chapter [Connecting a HC-05 Bluetooth module](https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale/_edit#connecting-a-hc-05-bluetooth-module-to-a-tablet). It is even slightly easier because we don't have to pull high a KEY pin anymore. You can find the AT commands in the [HC-10 manual](https://github.com/oliexdev/openScale/blob/master/doc/custom_scale/hc_10/HC_10_Manual.pdf). For example to change the Bluetooth device name to `openScale` send the AT command `AT+NAMEopenScale` to the HC-10 module.
+
+
 ## Reducing the power consumption
 
 The goal of this step is to reduce the power consumption as far as possible to extend the battery lifetime. The best way to do this is to bring the Arduino in sleep mode when it's not needed. To wake up the Arduino I used an external interrupt signal on pin 3 of the Arduino Pro Mini. It is connected to the first cycle clock (C0) of the display connector (see figure 2.4) because the cycle clock is only active if the scale is on. For bringing the Arduino into the sleep mode I used the [Low-Power library](https://github.com/rocketscream/Low-Power) by rocketscream. To detect when the scale is off I count all no active cycles. If it's exceed 32 cycles then I put the Arduino into sleep mode again and wait for the next interrupt event. The following code snippet implement this behaviour:
