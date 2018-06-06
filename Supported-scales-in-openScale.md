@@ -13,11 +13,11 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td><b>Remarks / Known Issues</b></td>
 </tr>
 <tr>
-<td>Custom Bluetooth scale</td>
+<td>Custom openScale</td>
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
-<td>Works only with Bluetooth 3.x</td>
+<td>see <a href="https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale">here</a> for a tutorial</td>
 </tr>
 <tr>
 <td>Xiaomi Mi scale v1</td>
