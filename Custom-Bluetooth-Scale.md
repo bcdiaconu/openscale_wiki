@@ -25,7 +25,7 @@
 
 ## Support for Bluetooth 4.x
 
-Nowadays all smartphones supports Bluetooth 4.x and not Bluetooth 3.x anymore, so I replaced the HC-05 Bluetooth 3.x module with the HC-10 Bluetooth module, see figure 7.1 and figure 7.2. Be aware that there are different HC-10 modules that have different subsets of AT commands. My used version is called [HM-10S-A](http://www.jnhuamao.cn/bluetooth.asp).
+Nowadays all smartphones supports Bluetooth 4.x and not Bluetooth 3.x anymore, so I replaced the HC-05 Bluetooth 3.x module with the HM-10 Bluetooth module, see figure 7.1 and figure 7.2. Be aware that there are different HM-10 modules that have different subsets of AT commands. My used version is called [HM-10S-A](http://www.jnhuamao.cn/bluetooth.asp).
 
 <table border="0">
   <tr>
@@ -33,19 +33,19 @@ Nowadays all smartphones supports Bluetooth 4.x and not Bluetooth 3.x anymore, s
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_front.jpg" target="_blank">
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_front.jpg' width='250px' alt='image missing' /> </a> <br>
-<sub>Figure 7.1: HC-10 Bluetooth 4.x module (front)</sub>
+<sub>Figure 7.1: HM-10 Bluetooth 4.x module (front)</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_back.jpg" target="_blank">
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_back.jpg' width='250px' alt='image missing' /> </a> <br>
-<sub>Figure 7.2: HC-10 Bluetooth 4.x module (back)</sub>
+<sub>Figure 7.2: HM-10 Bluetooth 4.x module (back)</sub>
 </th>
 
   </tr>
 </table>
 
-Luckily, we don't need to change anything because we can use the same pins as for the HC-05. For the HC-10 configuration we can also use the same Arduino sketch and parameters like in the chapter [Connecting a HC-05 Bluetooth module](https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale/_edit#connecting-a-hc-05-bluetooth-module-to-a-tablet) (only change "both NL & CR" back to "no line ending"). It is even slightly easier because we don't have to pull high a KEY pin anymore. You can find the AT commands in the [HC-10 manual](https://github.com/oliexdev/openScale/blob/master/doc/custom_scale/hc_10/HC_10_Manual.pdf). For example to change the Bluetooth device name to `openScale` send the AT command `AT+NAMEopenScale` to the HC-10 module.
+Luckily, we don't need to change anything because we can use the same pins as for the HC-05. For the HM-10 configuration we can also use the same Arduino sketch and parameters like in the chapter [Connecting a HC-05 Bluetooth module](https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale/_edit#connecting-a-hc-05-bluetooth-module-to-a-tablet) (only change "both NL & CR" back to "no line ending"). It is even slightly easier because we don't have to pull high a KEY pin anymore. You can find the AT commands in the [HM-10 manual](https://github.com/oliexdev/openScale/blob/master/doc/custom_scale/hm_10/HM_10_Manual.pdf). For example to change the Bluetooth device name to `openScale` send the AT command `AT+NAMEopenScale` to the HM-10 module.
 
 
 ## Reducing the power consumption
