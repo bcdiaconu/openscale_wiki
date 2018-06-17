@@ -126,7 +126,15 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">n/a</td>
 <td>-</td>
 </tr>
+<tr>
 <td>Easy Home 64050</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Accuway</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -269,6 +277,11 @@ _Please select a scale for further information_
 <th>
 <img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs440.jpg' width='300px' alt='image missing' /> <br>
 <sub>Medisana BS440</sub>
+</th>
+
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/accuway.jpg' width='300px' alt='image missing' /> <br>
+<sub>Accuway</sub>
 </th>
 
 </tr>
