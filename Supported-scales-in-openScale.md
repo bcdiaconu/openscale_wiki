@@ -286,4 +286,11 @@ _Please select a scale for further information_
 
 </tr>
 
+<tr>
+<th>
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/excelvan_cf366ble.jpg' width='300px' alt='image missing' /> <br>
+<sub>Excelvan CF366BLE</sub>
+</th>
+
+</tr>
 </table>
