@@ -10,6 +10,6 @@
 
 *openScale is an open source app which support various Bluetooth scales to keep log of your body metrics.*
 
-* [Supported scales in openScale](https://github.com/oliexdev/openScale/wiki/Supported-scales-in-openScale)
-* [Implemented body metric estimations](https://github.com/oliexdev/openScale/wiki/Body-metric-estimations)
-* [Frequently Asked Questions (FAQ)](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ))
+* [Supported scales in openScale](Supported-scales-in-openScale)
+* [Implemented body metric estimations](Body-metric-estimations)
+* [Frequently Asked Questions (FAQ)](Frequently-Asked-Questions-(FAQ))
