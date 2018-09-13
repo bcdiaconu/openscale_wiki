@@ -1,6 +1,6 @@
 <p align="center">
-<a href="../blob/master/doc/scales/medisana_bs444.png" target="_blank">
-<img src='../blob/master/doc/scales/medisana_bs444.png' width='300px' alt='missing' /> </a> <br>
+<a href="https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.png' width='300px' alt='missing' /> </a> <br>
 <sub>Medisana BS444 (front)</sub>
 </p>
 

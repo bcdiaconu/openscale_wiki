@@ -1,6 +1,6 @@
 <p align="center">
-<a href="../blob/master/doc/scales/miscale.jpg" target="_blank">
-<img src='../blob/master/doc/scales/miscale.jpg' width='300px' alt='missing' /> </a> <br>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg' width='300px' alt='missing' /> </a> <br>
 <sub>Xiaomi Mi Scale (front)</sub>
 </p>
 
@@ -38,8 +38,8 @@ Unfortunately I could only receive the weight data if a user was on the scale an
 For capturing the transmission I turned on the `Bluetooth HCI Snoop Log` under the developer options on my smartphone and started the Mi Fit App. Make sure you turn off your Bluetooth before your turn on the log and if you want to turn it off do it in reverse order. For the analysing step I opened the saved log with [wireshark](https://www.wireshark.org/). Please note that you should use a version > 1.10. The recent version supported Bluetooth much better!
 
 <p align="center">
-<a href="../blob/master/doc/misc/mi_scale_wireshark_init.png" target="_blank">
-<img src='../blob/master/doc/misc/mi_scale_wireshark_init.png' width='600px' alt='missing' /> </a> <br>
+<a href="https://github.com/oliexdev/openScale/raw/master/doc/misc/mi_scale_wireshark_init.png" target="_blank">
+<img src='https://github.com/oliexdev/openScale/raw/master/doc/misc/mi_scale_wireshark_init.png' width='600px' alt='missing' /> </a> <br>
 <sub>Analysing initialization process with wireshark</sub>
 </p>
 
