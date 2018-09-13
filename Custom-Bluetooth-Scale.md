@@ -1,7 +1,7 @@
 <!-- 
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/screens/screen_graph.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/screens/screen_graph.png' width='300px' alt='missing' /> </a> <br>
+<img src='../raw/master/doc/screens/screen_graph.png' width='300px' alt='missing' /> </a> <br>
 <sub>Caption</sub>
 </p>
 -->
@@ -10,13 +10,13 @@
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/scale_hacked_front.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/scale_hacked_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/scale_hacked_front.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure A: Final result of the hacked bathroom scale (front)</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/scale_hacked_back.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/scale_hacked_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/scale_hacked_back.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure B: Final result of the hacked bathroom scale (back)</sub>
 </th>
 
@@ -32,13 +32,13 @@ Nowadays all smartphones supports Bluetooth 4.x and not Bluetooth 3.x anymore, s
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_front.jpg" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_front.jpg' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/smart_bluetooth_front.jpg' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 7.1: HM-10 Bluetooth 4.x module (front)</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_back.jpg" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/smart_bluetooth_back.jpg' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/smart_bluetooth_back.jpg' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 7.2: HM-10 Bluetooth 4.x module (back)</sub>
 </th>
 
@@ -125,7 +125,7 @@ So in the end I could power supply the Arduino for around 3 years with the 4 AAA
 
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/bc546_transistor/bc546_schematic.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/bc546_transistor/bc546_schematic.png' width='300px' alt='missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/bc546_transistor/bc546_schematic.png' width='300px' alt='missing' /> </a> <br>
 <sub><b>Figure 6.1: Schematic of the BC546 NPN Transistor</b></sub>
 </p>
 
@@ -205,19 +205,19 @@ For temporally storing the measured values, even if the power supply is disconne
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/eeprom_24lc512/24lc512_schematic.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/eeprom_24lc512/24lc512_schematic.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/eeprom_24lc512/24lc512_schematic.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 5.1: Schematic of the 24LC512 I²C EEPROM</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/eeprom_front.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/eeprom_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/eeprom_front.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 5.2: I²C EEPROM module (front)</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/eeprom_back.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/eeprom_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/eeprom_back.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 5.3: I²C EEPROM module  (back)</sub>
 </th>
 
@@ -380,13 +380,13 @@ This time I bought a different [I²C RTC module](http://www.roboter-bausatz.de/3
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/rtc_front.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/rtc_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/rtc_front.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 4.1: I²C RTC module (front)</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/rtc_back.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/rtc_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/rtc_back.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 4.2: I²C RTC module  (back)</sub>
 </th>
 
@@ -442,13 +442,13 @@ For a wireless connection from my scale to my Nexus 10 tablet I am using a HC-05
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/bluetooth_front.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/bluetooth_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/bluetooth_front.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 3.1: HC-05 Bluetooth module (front)</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/bluetooth_back.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/bluetooth_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/bluetooth_back.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 3.2: HC-05 Bluetooth module  (back)</sub>
 </th>
 
@@ -543,19 +543,19 @@ In the previous step we had successful reverse engineered the scale's display. T
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/arduino_front.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/arduino_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/arduino_front.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 2.1: Arduino Pro Mini board</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/cp2102_front.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/cp2102_front.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/cp2102_front.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 2.2: CP2102 USB to Serial converter (front)</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/cp2102_back.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/cp2102_back.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/cp2102_back.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 2.3: CP2102 USB to Serial converter (back)</sub>
 </th>
 
@@ -578,7 +578,7 @@ I connected the scale's display connector to the Arduino Pro Mini as the followi
 
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/schematic.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/schematic.png' width='300px' alt='missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/schematic.png' width='300px' alt='missing' /> </a> <br>
 <sub><b>Figure 2.4: Schematic overview of the openScale project</b></sub>
 </p>
 
@@ -904,7 +904,7 @@ First of all I had to find a suitable bathroom scale that I wanted to reverse en
 
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/package.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/package.JPG' width='300px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/package.JPG' width='300px' alt='image missing' /> </a> <br>
 <sub><b>Figure 1.1: Sanitas SBF 12 scale</b></sub>
 </p>
 
@@ -915,19 +915,19 @@ To gain access to the inside of the scale I had to unscrew only a few screws on 
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scale_overview_raw.jpg" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scale_overview_raw.jpg' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scale_overview_raw.jpg' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.2: Scale overview</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_back_raw.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_back_raw.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/circuit_board_back_raw.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.3: Back side of the circuit board</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_front_raw.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_front_raw.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/circuit_board_front_raw.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.4: Front side of the circuit board</sub>
 </th>
 
@@ -944,19 +944,19 @@ The first step was to connect all pins with wires that are routed to the display
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_back_wired_unorderd.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_back_wired_unorderd.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/circuit_board_back_wired_unorderd.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.5: Connected wires unordered</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_back_wired_ordered.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/circuit_board_back_wired_ordered.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/circuit_board_back_wired_ordered.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.6: Connected wires ordered</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scale_overview_back_wired.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scale_overview_back_wired.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scale_overview_back_wired.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.7: Back side of the scale wired</sub>
 </th>
 
@@ -966,19 +966,19 @@ The first step was to connect all pins with wires that are routed to the display
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scale_overview_front_wired.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scale_overview_front_wired.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scale_overview_front_wired.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.8: Front side of the scale wired</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/wired_with_notes.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/wired_with_notes.JPG' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/wired_with_notes.JPG' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.9: Attached notes to the wires</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/display_connector_pin_layout.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/display_connector_pin_layout.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/display_connector_pin_layout.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.10: Pin layout of the display connector</sub>
 </th>
 
@@ -989,7 +989,7 @@ Next step is to analyse the signals that are controlling the display. I had the 
 
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/oscilloscope.JPG" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/oscilloscope.JPG' width='300px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/oscilloscope.JPG' width='300px' alt='image missing' /> </a> <br>
 <sub><b>Figure 1.11: The 16  digital channels oscilloscope for analysing the signals</b></sub>
 </p>
 
@@ -1023,19 +1023,19 @@ The question for the reverse engineering process was how the signals would respo
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P01.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P01.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P01.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.12: signals of value "P-01"</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P02.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P02.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P02.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.13: signals of value "P-02"</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P03.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P03.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P03.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.14: signals of value "P-03"</sub>
 </th>
 
@@ -1045,19 +1045,19 @@ The question for the reverse engineering process was how the signals would respo
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P04.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P04.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P04.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.15: signals of value "P-04"</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P05.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P05.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P05.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.16: signals of value "P-05"</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P06.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P06.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P06.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.17: signals of value "P-06"</sub>
 </th>
 
@@ -1067,19 +1067,19 @@ The question for the reverse engineering process was how the signals would respo
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P07.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P07.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P07.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.18: signals of value "P-07"</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P08.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P08.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P08.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.19: signals of value "P-08"</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P09.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_P09.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_P09.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.20: signals of value "P-09"</sub>
 </th>
 
@@ -1089,19 +1089,19 @@ The question for the reverse engineering process was how the signals would respo
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_0_0kg.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_0_0kg.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_0_0kg.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.21: signals of value "0.0 kg"</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_person.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_person.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_person.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.22: signals while displaying the person symbol, see signal on D8 and D9</sub>
 </th>
 
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_person_age.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/scope_person_age.png' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/scope_person_age.png' width='250px' alt='image missing' /> </a> <br>
 <sub>Figure 1.23: signals while displaying the person and age symbol, see signal D8 and D9</sub>
 </th>
 
@@ -1114,7 +1114,7 @@ For decoding the 8 Bit word I compared the recorded signals. I first chose two n
   <tr>
 <th>
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/seven_segement.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/seven_segement.png' width='200px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/seven_segement.png' width='200px' alt='image missing' /> </a> <br>
 <sub>Figure 1.24: seven segment display</sub>
 </th>
 

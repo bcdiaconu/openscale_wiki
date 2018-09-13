@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg' width='300px' alt='missing' /> </a> <br>
+<img src='../raw/master/doc/scales/miscale.jpg' width='300px' alt='missing' /> </a> <br>
 <sub>Xiaomi Mi Scale (front)</sub>
 </p>
 
@@ -39,7 +39,7 @@ For capturing the transmission I turned on the `Bluetooth HCI Snoop Log` under t
 
 <p align="center">
 <a href="https://github.com/oliexdev/openScale/raw/master/doc/misc/mi_scale_wireshark_init.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/misc/mi_scale_wireshark_init.png' width='600px' alt='missing' /> </a> <br>
+<img src='../raw/master/doc/misc/mi_scale_wireshark_init.png' width='600px' alt='missing' /> </a> <br>
 <sub>Analysing initialization process with wireshark</sub>
 </p>
 

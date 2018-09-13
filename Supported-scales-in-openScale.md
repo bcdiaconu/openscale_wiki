@@ -156,13 +156,13 @@ _Please select a scale for further information_
 
 <th>
 <a href="Custom-Bluetooth-Scale">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/scale_hacked_front.JPG' width='270px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/custom_scale/parts/scale_hacked_front.JPG' width='270px' alt='image missing' /> </a> <br>
 <sub><a href="Custom-Bluetooth-Scale">Custom Bluetooth scale</a></sub>
 </th>
 
 <th>
 <a href="Xiaomi-Bluetooth-Mi-Scale">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg' width='200px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/scales/miscale.jpg' width='200px' alt='image missing' /> </a> <br>
 <sub><a href="Xiaomi-Bluetooth-Mi-Scale">Xiaomi Mi scale v1</a></sub>
 </th>
 
@@ -172,12 +172,12 @@ _Please select a scale for further information_
 
 <th>
 <a href="Medisana-BS444">
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.jpg' width='250px' alt='image missing' /> </a> <br>
+<img src='../raw/master/doc/scales/medisana_bs444.jpg' width='250px' alt='image missing' /> </a> <br>
 <sub><a href="Medisana-BS444">Medisana BS444 scale</a></sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/scales/sanitas_sbf70.jpg' width='280px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/sanitas_sbf70.jpg' width='280px' alt='image missing' /> <br>
 <sub>Sanitas SBF70</sub>
 </th>
 
@@ -186,24 +186,24 @@ _Please select a scale for further information_
   <tr>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/Digoo%20DG-S038H.jpeg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/Digoo%20DG-S038H.jpeg' width='250px' alt='image missing' /> <br>
 <sub>Digoo DG-S038H</sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/scales/yunmai_mini.jpg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/yunmai_mini.jpg' width='250px' alt='image missing' /> <br>
 <sub>Yunmai Mini</sub>
 </th>
 </tr>
 
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/excelvan_cf369ble.jpg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/excelvan_cf369ble.jpg' width='250px' alt='image missing' /> <br>
 <sub>Excelvan CF369BLE</sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/yunmai_se.jpeg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/yunmai_se.jpeg' width='250px' alt='image missing' /> <br>
 <sub>Yunmai SE</sub>
 </th>
 
@@ -212,25 +212,25 @@ _Please select a scale for further information_
 
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/mgb.jpg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/mgb.jpg' width='250px' alt='image missing' /> <br>
 <sub>MGB</sub>
 </th>
 
 <th>
 <br>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/mi_scalev2.jpg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/mi_scalev2.jpg' width='250px' alt='image missing' /> <br>
 <sub>Xiaomi Mi scale v2</sub>
 </th>
 
   </tr>
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/exingtech_y1.jpg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/exingtech_y1.jpg' width='250px' alt='image missing' /> <br>
 <sub>Exingtech Y1</sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/beurer_bf700.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/beurer_bf700.jpg' width='300px' alt='image missing' /> <br>
 <sub>Beurer BF700/800</sub>
 </th>
 
@@ -238,12 +238,12 @@ _Please select a scale for further information_
 
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/silvercrest_sbf75.jpg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/silvercrest_sbf75.jpg' width='250px' alt='image missing' /> <br>
 <sub>Silvercrest SBF75</sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/runtastic.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/runtastic.jpg' width='300px' alt='image missing' /> <br>
 <sub>Runtastic Libra</sub>
 </th>
 
@@ -251,36 +251,36 @@ _Please select a scale for further information_
 
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/hesley.jpg' width='250px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/hesley.jpg' width='250px' alt='image missing' /> <br>
 <sub>Hesley (Yunchen) scale</sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/ihealth_hs3.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/ihealth_hs3.jpg' width='300px' alt='image missing' /> <br>
 <sub>iHealth HS3</sub>
 </th>
 
   </tr>
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/beurer_bf710.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/beurer_bf710.jpg' width='300px' alt='image missing' /> <br>
 <sub>Beurer BF710</sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/easy_home_64050.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/easy_home_64050.jpg' width='300px' alt='image missing' /> <br>
 <sub>Easy Home 64050</sub>
 </th>
   </tr>
 
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs440.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/medisana_bs440.jpg' width='300px' alt='image missing' /> <br>
 <sub>Medisana BS440</sub>
 </th>
 
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/accuway.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/accuway.jpg' width='300px' alt='image missing' /> <br>
 <sub>Accuway</sub>
 </th>
 
@@ -288,7 +288,7 @@ _Please select a scale for further information_
 
 <tr>
 <th>
-<img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/excelvan_cf366ble.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/doc/scales/excelvan_cf366ble.jpg' width='300px' alt='image missing' /> <br>
 <sub>Excelvan CF366BLE</sub>
 </th>
 
