@@ -39,7 +39,7 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td>assigned user name on the scale and in openScale have to be the same, see 
-<a href="https://github.com/oliexdev/openScale/wiki/FAQ/_edit#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
+<a href="https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
 </tr>
 <tr>
 <td>Digoo DG-S038H</td>
@@ -103,7 +103,7 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td>assigned user name on the scale and in openScale have to be the same, see 
-<a href="https://github.com/oliexdev/openScale/wiki/FAQ/_edit#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
+<a href="https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
 </tr>
 <tr>
 <td>Runtastic Libra</td>
