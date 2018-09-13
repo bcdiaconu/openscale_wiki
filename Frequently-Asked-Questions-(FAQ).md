@@ -1,17 +1,17 @@
-* [My scale xyz is not supported why?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#my-scale-xyz-is-not-supported-why)
-* [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
-* [Why is my language xyz is missing or incomplete?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#why-is-my-language-xyz-is-missing-or-incomplete)
-* [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
-* [Which scale can you recommend?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-%28FAQ%29#which-scale-can-you-recommend)
-* [Why do openScale needs permission to the coarse location?](https://github.com/oliexdev/openScale/wiki/Frequently-Asked-Questions-%28FAQ%29#why-do-openscale-needs-permission-to-the-coarse-location)
+* [My scale xyz is not supported why?](Frequently-Asked-Questions-(FAQ)#my-scale-xyz-is-not-supported-why)
+* [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](Frequently-Asked-Questions-(FAQ)#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
+* [Why is my language xyz is missing or incomplete?](Frequently-Asked-Questions-(FAQ)#why-is-my-language-xyz-is-missing-or-incomplete)
+* [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
+* [Which scale can you recommend?](Frequently-Asked-Questions-%28FAQ%29#which-scale-can-you-recommend)
+* [Why do openScale needs permission to the coarse location?](Frequently-Asked-Questions-%28FAQ%29#why-do-openscale-needs-permission-to-the-coarse-location)
 
 ## My scale xyz is not supported why?
 
-I don't own every scale. But openScale is open source and lives from the open source community if you want to help you could try to reverse engineer your scale by analysing the Bluetooth 4.x protocol between your scale and the original vendor app, see [Bluetooth 4.x Reverse Engineer tutorial](https://github.com/oliexdev/openScale/wiki/How-to-reverse-engineer-a-Bluetooth-4.x-scale) for further information. If you understand the protocol then it is not complicated to implement it into openScale.
+I don't own every scale. But openScale is open source and lives from the open source community if you want to help you could try to reverse engineer your scale by analysing the Bluetooth 4.x protocol between your scale and the original vendor app, see [Bluetooth 4.x Reverse Engineer tutorial](How-to-reverse-engineer-a-Bluetooth-4.x-scale) for further information. If you understand the protocol then it is not complicated to implement it into openScale.
 
 ## Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?
 
-Personally I don't want to synchronise any health data to a company for privacy reasons. Therefore, openScale doesn't send any data to a cloud and not having permission to access the internet is a strong guarantee of that. Additionally, most of the used licenses by the cloud companies are incompatible with the GPLv3 license. So openScale won't support it directly but every user are free to do it anyway, just (auto) export your data and do whatever you like, see for example the [Autosync with Nextcloud tutorial](https://github.com/oliexdev/openScale/wiki/Autosync-with-Nextcloud). 
+Personally I don't want to synchronise any health data to a company for privacy reasons. Therefore, openScale doesn't send any data to a cloud and not having permission to access the internet is a strong guarantee of that. Additionally, most of the used licenses by the cloud companies are incompatible with the GPLv3 license. So openScale won't support it directly but every user are free to do it anyway, just (auto) export your data and do whatever you like, see for example the [Autosync with Nextcloud tutorial](Autosync-with-Nextcloud).
 
 ## Why is my language xyz is missing or incomplete?
 

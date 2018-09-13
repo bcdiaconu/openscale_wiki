@@ -1,6 +1,6 @@
 ## How to support your scale
 
-If you want to help to support your Bluetooth scale please see [here](https://github.com/oliexdev/openScale/wiki/How-to-reverse-engineer-a-Bluetooth-4.x-scale) for further information.
+If you want to help to support your Bluetooth scale please see [here](How-to-reverse-engineer-a-Bluetooth-4.x-scale) for further information.
 
 ## Overview
 
@@ -17,7 +17,7 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
-<td>see <a href="https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale">here</a> for a tutorial</td>
+<td>see <a href="Custom-Bluetooth-Scale">here</a> for a tutorial</td>
 </tr>
 <tr>
 <td>Xiaomi Mi scale v1</td>
@@ -39,7 +39,7 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td>assigned user name on the scale and in openScale have to be the same, see 
-<a href="https://github.com/oliexdev/openScale/wiki/FAQ/_edit#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
+<a href="Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
 </tr>
 <tr>
 <td>Digoo DG-S038H</td>
@@ -103,7 +103,7 @@ If you want to help to support your Bluetooth scale please see [here](https://gi
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td>assigned user name on the scale and in openScale have to be the same, see 
-<a href="https://github.com/oliexdev/openScale/wiki/FAQ/_edit#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
+<a href="Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage">FAQ</a></td>
 </tr>
 <tr>
 <td>Runtastic Libra</td>
@@ -155,15 +155,15 @@ _Please select a scale for further information_
   <tr>
 
 <th>
-<a href="https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale">
+<a href="Custom-Bluetooth-Scale">
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/custom_scale/parts/scale_hacked_front.JPG' width='270px' alt='image missing' /> </a> <br>
-<sub><a href="https://github.com/oliexdev/openScale/wiki/Custom-Bluetooth-Scale">Custom Bluetooth scale</a></sub>
+<sub><a href="Custom-Bluetooth-Scale">Custom Bluetooth scale</a></sub>
 </th>
 
 <th>
-<a href="https://github.com/oliexdev/openScale/wiki/Xiaomi-Bluetooth-Mi-Scale">
+<a href="Xiaomi-Bluetooth-Mi-Scale">
 <img src='https://github.com/oliexdev/openScale/raw/master/doc/scales/miscale.jpg' width='200px' alt='image missing' /> </a> <br>
-<sub><a href="https://github.com/oliexdev/openScale/wiki/Xiaomi-Bluetooth-Mi-Scale">Xiaomi Mi scale v1</a></sub>
+<sub><a href="Xiaomi-Bluetooth-Mi-Scale">Xiaomi Mi scale v1</a></sub>
 </th>
 
   </tr>
@@ -171,9 +171,9 @@ _Please select a scale for further information_
   <tr>
 
 <th>
-<a href="https://github.com/oliexdev/openScale/wiki/Medisana-BS444">
+<a href="Medisana-BS444">
 <img src='https://github.com/oliexdev/openScale/blob/master/doc/scales/medisana_bs444.jpg' width='250px' alt='image missing' /> </a> <br>
-<sub><a href="https://github.com/oliexdev/openScale/wiki/Medisana-BS444">Medisana BS444 scale</a></sub>
+<sub><a href="Medisana-BS444">Medisana BS444 scale</a></sub>
 </th>
 
 <th>
