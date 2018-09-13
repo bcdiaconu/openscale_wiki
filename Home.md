@@ -1,7 +1,7 @@
 <!-- 
 <p align="center">
-<a href="https://github.com/oliexdev/openScale/raw/master/doc/screens/screen_graph.png" target="_blank">
-<img src='https://github.com/oliexdev/openScale/raw/master/doc/screens/screen_graph.png' width='300px' alt='missing' /> </a> <br>
+<a href="../blob/master/doc/screens/screen_graph.png" target="_blank">
+<img src='../blob/master/doc/screens/screen_graph.png' width='300px' alt='missing' /> </a> <br>
 <sub>Caption</sub>
 </p>
 -->
