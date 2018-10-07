@@ -52,8 +52,8 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>Yunmai Mini</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
-<td align="center">o</td>
-<td>Only the weight and body fat are supported by openScale. The rest of the body metrics are currently not supported because of the not transparent impedance calculation by the company, see issue <a href="https://github.com/oliexdev/openScale/issues/71">#71</a></td>
+<td align="center">&#10003;</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Excelvan CF369BLE</td>
@@ -81,7 +81,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">o</td>
-<td>Only the weight are supported by openScale. The rest of the body metrics are currently not supported because of the not transparent impedance calculation by the company</td>
+<td>Only the weight are supported by openScale. The body fat, water and LBM of the body metrics are currently <a href="https://github.com/oliexdev/openScale/wiki/Body-metric-estimations">estimated</a> until the reverse engineering of the used library</td>
 </tr>
 <tr>
 <td>Exingtech Y1</td>
@@ -139,6 +139,20 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
 <td>-</td>
+</tr>
+<tr>
+<td>OneByone</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Trisa Body Analyze 4.0</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">o</td>
+<td>no body measurements are currently calculated</td>
 </tr>
 </table>
 &#10003; : supported in openScale <br>
