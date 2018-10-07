@@ -150,7 +150,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <tr>
 <td>Trisa Body Analyze 4.0</td>
 <td align="center">&#10003;</td>
-<td align="center">n/a</td>
+<td align="center">&#10003;</td>
 <td align="center">o</td>
 <td>no body measurements are currently calculated</td>
 </tr>
@@ -304,6 +304,11 @@ _Please select a scale for further information_
 <th>
 <img src='../raw/master/doc/scales/excelvan_cf366ble.jpg' width='300px' alt='image missing' /> <br>
 <sub>Excelvan CF366BLE</sub>
+</th>
+
+<th>
+<img src='../raw/master/doc/scales/trisa_body_analyze.jpg' width='300px' alt='image missing' /> <br>
+<sub>Trisa Body Analyze 4.0</sub>
 </th>
 
 </tr>
