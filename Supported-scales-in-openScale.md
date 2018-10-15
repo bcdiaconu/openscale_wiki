@@ -151,8 +151,8 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>Trisa Body Analyze 4.0</td>
 <td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
-<td align="center">o</td>
-<td>no body measurements are currently calculated</td>
+<td align="center">&#10003;</td>
+<td>-</td>
 </tr>
 </table>
 &#10003; : supported in openScale <br>
