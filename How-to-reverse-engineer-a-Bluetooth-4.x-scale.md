@@ -9,10 +9,12 @@ The general procedure of reverse engineering a Bluetooth 4.x scale is as follow:
 6. Do step 1-5 at least three times again but with different weights (e.g. weight yourself while holding a crate of beer)
 
 #### 2. Find out the Bluetooth services and characteristic
-1. Install [BLE Scanner App](https://play.google.com/store/apps/details?id=com.macdom.ble.blescanner) by Bluepixel Technology LLP
-2. Scan and connect to the scale with this app
-3. Note down all UUID numbers of services and characteristic which are not `Device Information`, `Generic Access` and, `Generic Attribute`
-4. Additionally note down for every characteristic UUID if it readable (R), writeable (W) and/or have an indication flag (I) 
+1. Install the openScale [development version](https://github.com/oliexdev/openScale/releases/tag/travis-dev-build).
+2. Go to settings, about and enable debug log.
+3. Then go to settings, Bluetooth and search for your scale.
+4. Once found, click on it and openScale will then fetch information about all services and characteristics.
+5. Return to settings, about and disable logging. Attach the log together with the btsnoop logs in a GitHub issue.
+6. If this for some reason doesn't work you can also try the [BLE Scanner App](https://play.google.com/store/apps/details?id=com.macdom.ble.blescanner) by Bluepixel Technology LLP.
 
 #### 3. Analyse the Bluetooth protocol
 1. Open your first `btsnoop_hci.log` with wireshark version > 1.10
