@@ -154,6 +154,13 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td align="center">&#10003;</td>
 <td>-</td>
 </tr>
+<tr>
+<td>Inlife</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>-</td>
+</tr>
 </table>
 &#10003; : supported in openScale <br>
 o : supported by the scale but still needs to be reverse engineered<br>
@@ -311,5 +318,13 @@ _Please select a scale for further information_
 <sub>Trisa Body Analyze 4.0</sub>
 </th>
 
+</tr>
+
+<tr>
+
+<th>
+<img src='../raw/master/doc/scales/inlife.jpg' width='300px' alt='image missing' /> <br>
+<sub>Inlife</sub>
+</th>
 </tr>
 </table>
