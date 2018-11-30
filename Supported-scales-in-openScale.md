@@ -49,7 +49,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>Initialisation process needs to be reverse engineered. Currently you have to use one time the vendors app to initialise the scale.</td>
 </tr>
 <tr>
-<td>Yunmai Mini</td>
+<td>Yunmai Mini / Yunmai Premium</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
