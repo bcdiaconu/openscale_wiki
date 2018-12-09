@@ -198,8 +198,9 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<img src='../raw/master/doc/scales/sanitas_sbf70.jpg' width='280px' alt='image missing' /> <br>
-<sub>Sanitas SBF70</sub>
+<a href="Beurer-Sanitas">
+<img src='../raw/master/doc/scales/sanitas_sbf70.jpg' width='280px' alt='image missing' /></a> <br>
+<sub><a href="Beurer-Sanitas">Sanitas SBF70</a></sub>
 </th>
 
   </tr>
@@ -251,16 +252,18 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<img src='../raw/master/doc/scales/beurer_bf700.jpg' width='300px' alt='image missing' /> <br>
-<sub>Beurer BF700/800</sub>
+<a href="Beurer-Sanitas">
+<img src='../raw/master/doc/scales/beurer_bf700.jpg' width='300px' alt='image missing' /></a> <br>
+<sub><a href="Beurer-Sanitas">Beurer BF700/800</a></sub>
 </th>
 
   </tr>
 
 <tr>
 <th>
-<img src='../raw/master/doc/scales/silvercrest_sbf75.jpg' width='250px' alt='image missing' /> <br>
-<sub>Silvercrest SBF75</sub>
+<a href="Beurer-Sanitas">
+<img src='../raw/master/doc/scales/silvercrest_sbf75.jpg' width='250px' alt='image missing' /></a> <br>
+<sub><a href="Beurer-Sanitas">Silvercrest SBF75</a></sub>
 </th>
 
 <th>
@@ -314,8 +317,9 @@ _Please select a scale for further information_
 </th>
 
 <th>
-<img src='../raw/master/doc/scales/trisa_body_analyze.jpg' width='300px' alt='image missing' /> <br>
-<sub>Trisa Body Analyze 4.0</sub>
+<a href="Trisa-Body-Analyze">
+<img src='../raw/master/doc/scales/trisa_body_analyze.jpg' width='300px' alt='image missing' /></a><br>
+<sub><a href="Trisa-Body-Analyze">Trisa Body Analyze 4.0</a></sub>
 </th>
 
 </tr>
