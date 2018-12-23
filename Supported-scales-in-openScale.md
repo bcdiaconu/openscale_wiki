@@ -70,7 +70,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>Weight unit is currently not set via openScale</td>
 </tr>
 <tr>
-<td>MGB</td>
+<td>MGB / Vitalmaxx</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
