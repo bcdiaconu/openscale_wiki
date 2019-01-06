@@ -6,9 +6,9 @@
 </p>
 -->
 
-# openScale wiki
+# ![openScale logo](https://github.com/oliexdev/openScale/blob/master/android_app/app/src/main/res/drawable-mdpi/ic_launcher_openscale.png) openScale wiki
 
-*openScale is an open source app which support various Bluetooth scales to keep log of your body metrics.*
+*Open-source weight and body metrics tracker, with support for Bluetooth scales*
 
 * [Supported scales in openScale](Supported-scales-in-openScale)
 * [Implemented body metric estimations](Body-metric-estimations)
