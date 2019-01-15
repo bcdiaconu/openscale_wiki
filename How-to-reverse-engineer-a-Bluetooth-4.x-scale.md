@@ -3,7 +3,7 @@ The general procedure of reverse engineering a Bluetooth 4.x scale is as follow:
 #### 1. Acquiring some Bluetooth traffic
 1. Delete first on your smartphone any old `btsnoop_hci.log` 
 2. Turn on the `Bluetooth HCI Snoop Log` developer option on the smartphone 
-3. Weight yourself with the original app and note down the corresponding exact true date/time with all other information (e.g. weight, water percentage, bone mass and so on). 
+3. Weight yourself with the original app and note down the corresponding exact true date/time with all other information (e.g. weight, water percentage, bone mass and so on). Also note your user information like sex (male/female), body height, activity level, and age.
 4. Turn off the `Bluetooth HCI Snoop Log` developer option
 5. Save the `btsnoop_hci.log` with a meaningful filename
 6. Do step 1-5 at least three times again but with different weights (e.g. weight yourself while holding a crate of beer)
