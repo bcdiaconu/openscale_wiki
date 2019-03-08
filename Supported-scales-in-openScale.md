@@ -80,8 +80,8 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>Xiaomi Mi scale v2</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
-<td align="center">o</td>
-<td>Only the weight are supported by openScale. The body fat, water and LBM of the body metrics are currently <a href="https://github.com/oliexdev/openScale/wiki/Body-metric-estimations">estimated</a> until the reverse engineering of the used library</td>
+<td align="center">&#10003;</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Exingtech Y1</td>
@@ -160,6 +160,13 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
 <td>-</td>
+</tr>
+<tr>
+<td>FitIndex ES-26M</td>
+<td align="center">&#10003;</td>
+<td align="center">n/a</td>
+<td align="center">&#10003;</td>
+<td>Used Trisa Body Analyze body measurement library until original <a href="https://github.com/oliexdev/openScale/issues/373">QN scale library</a> is full reverse engineered</td>
 </tr>
 </table>
 &#10003; : supported in openScale <br>
@@ -329,6 +336,10 @@ _Please select a scale for further information_
 <th>
 <img src='../raw/master/doc/scales/inlife.jpg' width='300px' alt='image missing' /> <br>
 <sub>Inlife</sub>
+</th>
+<th>
+<img src='../raw/master/doc/scales/fitindex_es26m.jpg' width='300px' alt='image missing' /> <br>
+<sub>FitIndex ES-26M</sub>
 </th>
 </tr>
 </table>
