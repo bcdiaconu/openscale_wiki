@@ -1,5 +1,3 @@
-# openScale-Sync
-
 Synchronise your openScale weight data to GoogleFit.
 
 # Features
