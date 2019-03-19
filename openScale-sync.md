@@ -1,3 +1,5 @@
+# ![openScale sync logo](https://github.com/oliexdev/openScale/blob/master/doc/sync/openscale_sync.png) openScale sync
+
 Synchronise your openScale weight data to GoogleFit.
 
 # Features
