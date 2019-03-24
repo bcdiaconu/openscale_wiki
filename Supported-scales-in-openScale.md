@@ -79,7 +79,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <tr>
 <td>Xiaomi Mi scale v2</td>
 <td align="center">&#10003;</td>
-<td align="center">n/a</td>
+<td align="center">&#10003;</td>
 <td align="center">&#10003;</td>
 <td>-</td>
 </tr>
