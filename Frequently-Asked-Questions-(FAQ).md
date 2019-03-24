@@ -1,5 +1,6 @@
 * [My scale xyz is not supported why?](Frequently-Asked-Questions-(FAQ)#my-scale-xyz-is-not-supported-why)
 * [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](Frequently-Asked-Questions-(FAQ)#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
+* [What are the differences between the openScale pro/light and the f-droid version?]()
 * [Why is my language xyz is missing or incomplete?](Frequently-Asked-Questions-(FAQ)#why-is-my-language-xyz-is-missing-or-incomplete)
 * [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
 * [Which scale can you recommend?](Frequently-Asked-Questions-%28FAQ%29#which-scale-can-you-recommend)
@@ -12,6 +13,12 @@ I don't own every scale. But openScale is open source and lives from the open so
 ## Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?
 
 Personally I don't want to synchronise any health data to a company for privacy reasons. Therefore, openScale doesn't send any data to a cloud and not having permission to access the internet is a strong guarantee of that. Additionally, most of the used licenses by the cloud companies are incompatible with the GPLv3 license. So openScale won't support it directly but every user are free to do it anyway, just (auto) export your data and do whatever you like, see for example the [Autosync with Nextcloud tutorial](Autosync-with-Nextcloud).
+
+If you want to synchronise your weight to GoogleFit, you can install [openScale sync](https://github.com/oliexdev/openScale/wiki/openScale-sync) from [GooglePlay](https://play.google.com/store/apps/details?id=com.health.openscale.sync).
+
+## What are the differences between the openScale pro/light and the f-droid version?
+
+The openScale pro supports Bluetooth scales and the light version doesn't. But if you don't want to pay for the pro version, you could test or use the f-droid version, because the pro and f-droid version are identical.
 
 ## Why is my language xyz is missing or incomplete?
 
