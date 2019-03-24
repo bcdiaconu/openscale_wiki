@@ -1,6 +1,6 @@
 * [My scale xyz is not supported why?](Frequently-Asked-Questions-(FAQ)#my-scale-xyz-is-not-supported-why)
 * [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](Frequently-Asked-Questions-(FAQ)#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
-* [What are the differences between the openScale pro/light and the f-droid version?]()
+* [What are the differences between the openScale pro/light and the f-droid version?](Frequently-Asked-Questions-(FAQ)#what-are-the-differences-between-the-openscale-prolight-and-the-f-droid-version)
 * [Why is my language xyz is missing or incomplete?](Frequently-Asked-Questions-(FAQ)#why-is-my-language-xyz-is-missing-or-incomplete)
 * [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
 * [Which scale can you recommend?](Frequently-Asked-Questions-%28FAQ%29#which-scale-can-you-recommend)
