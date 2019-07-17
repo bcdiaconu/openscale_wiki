@@ -5,6 +5,7 @@
 * [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
 * [Which scale can you recommend?](Frequently-Asked-Questions-%28FAQ%29#which-scale-can-you-recommend)
 * [Why do openScale needs permission to the coarse location?](Frequently-Asked-Questions-%28FAQ%29#why-do-openscale-needs-permission-to-the-coarse-location)
+* [How to get the openScale debug log file?](Frequently-Asked-Questions-%28FAQ%29/_edit#how-to-get-the-openscale-debug-log-file)
 
 ## My scale xyz is not supported why?
 
@@ -37,3 +38,7 @@ As I don't own all scales by myself I can't really say which works the best with
 ## Why do openScale needs permission to the coarse location?
 
 The answer is simple because the Android API >= 6.0 needs access to the coarse location to search for Bluetooth devices. The App openScale doesn't read your location at any time. Read the official [Android Bluetooth Developer Guide](https://developer.android.com/guide/topics/connectivity/bluetooth-le.html#permissions) or read the [Android 6.0 Changelog](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-hardware-id) for a more technical description.
+
+## How to get the openScale debug log file?
+
+Go to _Settings->Info_ and enable the _"Save debug log to file"_ option, select a path and filename where the log file should be saved. Reproduce your error in openScale for example connect via Bluetooth to your scale to log the Bluetooth communication. If you are finished go to _Settings->Info_ and disable the _"Save debug log to file"_ option to write the debug log file on your smartphone. Paste it with the markdown code tag in a new issue or attach the log file in an issue.
