@@ -64,10 +64,10 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 </tr>
 <tr>
 <td>Yunmai SE</td>
-<td align="center">o</td>
+<td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">n/a</td>
-<td>Weight unit is currently not set via openScale</td>
+<td>-</td>
 </tr>
 <tr>
 <td>MGB / Vitalmaxx</td>
