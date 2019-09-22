@@ -5,7 +5,7 @@
 * [How do I get on my SBF70 scale the body metrics (water, muscle, fat percentage)?](Frequently-Asked-Questions-(FAQ)#how-do-i-get-on-my-sbf70-scale-the-body-metrics-water-muscle-fat-percentage)
 * [Which scale can you recommend?](Frequently-Asked-Questions-%28FAQ%29#which-scale-can-you-recommend)
 * [Why do openScale needs permission to the coarse location?](Frequently-Asked-Questions-%28FAQ%29#why-do-openscale-needs-permission-to-the-coarse-location)
-* [How to get the openScale debug log file?](Frequently-Asked-Questions-%28FAQ%29/_edit#how-to-get-the-openscale-debug-log-file)
+* [How to get the openScale debug log file?](Frequently-Asked-Questions-%28FAQ%29#how-to-get-the-openscale-debug-log-file)
 
 ## My scale xyz is not supported why?
 
