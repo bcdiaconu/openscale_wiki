@@ -15,7 +15,7 @@ I don't own every scale. But openScale is open source and lives from the open so
 
 Personally I don't want to synchronise any health data to a company for privacy reasons. Therefore, openScale doesn't send any data to a cloud and not having permission to access the internet is a strong guarantee of that. Additionally, most of the used licenses by the cloud companies are incompatible with the GPLv3 license. So openScale won't support it directly but every user are free to do it anyway, just (auto) export your data and do whatever you like, see for example the [Autosync with Nextcloud tutorial](Autosync-with-Nextcloud).
 
-If you want to synchronise your weight to GoogleFit, you can install [openScale sync](https://github.com/oliexdev/openScale/wiki/openScale-sync) from [GooglePlay](https://play.google.com/store/apps/details?id=com.health.openscale.sync).
+If you want to synchronise your weight to GoogleFit and/or MQTT 3.1, you can install [openScale sync](https://github.com/oliexdev/openScale/wiki/openScale-sync) from [GooglePlay](https://play.google.com/store/apps/details?id=com.health.openscale.sync).
 
 ## What are the differences between the openScale pro/light and the f-droid version?
 
