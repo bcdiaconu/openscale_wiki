@@ -27,7 +27,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>No data on the scale is ever deleted</td>
 </tr>
 <tr>
-<td>Medisana BS430/BS444/BS440</td>
+<td>Medisana BS410/BS430/BS444/BS440</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
