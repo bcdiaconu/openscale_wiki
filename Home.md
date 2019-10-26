@@ -6,10 +6,28 @@
 </p>
 -->
 
-# ![openScale logo](https://github.com/oliexdev/openScale/blob/master/android_app/app/src/main/res/drawable-mdpi/ic_launcher_openscale.png) openScale wiki
+# ![openScale logo](https://github.com/oliexdev/openScale/blob/master/android_app/app/src/main/res/drawable-mdpi/ic_launcher_openscale.png) [openScale](Home)
 
 *Open-source weight and body metrics tracker, with support for Bluetooth scales*
 
-* [Supported scales in openScale](Supported-scales-in-openScale)
-* [Implemented body metric estimations](Body-metric-estimations)
 * [Frequently Asked Questions (FAQ)](Frequently-Asked-Questions-(FAQ))
+  * [How-to support a new scale](How-to-reverse-engineer-a-Bluetooth-4.x-scale)
+  * [Autosync with Nextcloud](Autosync-with-Nextcloud)
+* [Overview of supported scales](Supported-scales-in-openScale)
+  * [Custom Bluetooth Scale](Custom-Bluetooth-Scale)
+  * [Beurer/Sanitas](Beurer-Sanitas)
+  * [Medisana](Medisana-BS444)
+  * [Trisa-Body-Analyze](Trisa-Body-Analyze)
+  * [Xiaomi](Xiaomi-Bluetooth-Mi-Scale)
+* [Implemented body metric estimations](Body-metric-estimations)
+
+---
+
+
+# ![openScale sync logo](https://github.com/oliexdev/openScale/blob/master/docs/sync/openscale_sync.png) [openScale sync](openScale-sync)
+
+_Synchronise your openScale weight data to GoogleFit and/or MQTT._
+
+
+* [MQTT 3.1 support](MQTT-support)
+
