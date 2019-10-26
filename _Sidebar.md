@@ -3,7 +3,7 @@
 * [Frequently Asked Questions (FAQ)](Frequently-Asked-Questions-(FAQ))
   * [How-to support a new scale](How-to-reverse-engineer-a-Bluetooth-4.x-scale)
   * [Autosync with Nextcloud](Autosync-with-Nextcloud)
-* [Supported scales](Supported-scales-in-openScale)
+* [Overview of supported scales](Supported-scales-in-openScale)
   * [Custom Bluetooth Scale](Custom-Bluetooth-Scale)
   * [Beurer/Sanitas](Beurer-Sanitas)
   * [Medisana](Medisana-BS444)
