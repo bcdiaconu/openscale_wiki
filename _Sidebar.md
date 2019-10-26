@@ -13,3 +13,4 @@
 
 [openScale sync](openScale-sync)
 ---
+* [MQTT 3.1 support](MQTT-support)
