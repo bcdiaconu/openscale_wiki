@@ -1,6 +1,6 @@
 <p align="center">
-<a href="../raw/master/doc/scales/miscale.jpg" target="_blank">
-<img src='../raw/master/doc/scales/miscale.jpg' width='300px' alt='missing' /> </a> <br>
+<a href="../raw/master/docs/scales/miscale.jpg" target="_blank">
+<img src='../raw/master/docs/scales/miscale.jpg' width='300px' alt='missing' /> </a> <br>
 <sub>Xiaomi Mi Scale (front)</sub>
 </p>
 
