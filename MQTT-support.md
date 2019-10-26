@@ -2,7 +2,7 @@ The payload is formatted in JSON notation. The measurement reference is the Unix
 
 Currently only the weight of an user is transmitted. You could test the openScale sync MQTT support for example using [CloudMQTT](https://www.cloudmqtt.com/).
 
-_Note: openScale supported only MQTT 3.1 **not** MQTT 5.x_
+_Note: openScale supports only MQTT 3.1 **not** MQTT 5.x_
 
 **Adding a measurement**
 
