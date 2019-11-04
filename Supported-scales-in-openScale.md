@@ -162,7 +162,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>-</td>
 </tr>
 <tr>
-<td>FitIndex ES-26M</td>
+<td>FitIndex ES-26M / Elektra Scale</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -340,6 +340,16 @@ _Please select a scale for further information_
 <th>
 <img src='../raw/master/docs/scales/fitindex_es26m.jpg' width='300px' alt='image missing' /> <br>
 <sub>FitIndex ES-26M</sub>
+</th>
+</tr>
+
+<th>
+<img src='../raw/master/docs/scales/elektra_care.jpg' width='300px' alt='image missing' /> <br>
+<sub>Elektra Care</sub>
+</th>
+<th>
+-
+<sub>-</sub>
 </th>
 </tr>
 </table>
