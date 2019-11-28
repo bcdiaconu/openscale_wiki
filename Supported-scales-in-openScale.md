@@ -70,7 +70,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>-</td>
 </tr>
 <tr>
-<td>MGB / Vitalmaxx</td>
+<td>MGB / Vitalmaxx / Vigorun</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -348,8 +348,8 @@ _Please select a scale for further information_
 <sub>Elektra Care</sub>
 </th>
 <th>
--
-<sub>-</sub>
+<img src='../raw/master/docs/scales/vigorun.jpg' width='300px' alt='image missing' /> <br>
+<sub>Vigorun</sub>
 </th>
 </tr>
 </table>
