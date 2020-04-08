@@ -352,4 +352,16 @@ _Please select a scale for further information_
 <sub>Vigorun</sub>
 </th>
 </tr>
+
+<tr>
+<th>
+<img src='../raw/master/docs/scales/quanta_qtbl10.jpg' width='300px' alt='image missing' /> <br>
+<sub>Quanta QTBL10</sub>
+</th>
+<th>
+ <br>
+<sub></sub>
+</th>
+</tr>
+
 </table>
