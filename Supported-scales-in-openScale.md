@@ -355,7 +355,7 @@ _Please select a scale for further information_
 
 <tr>
 <th>
-<img src='../raw/master/docs/scales/quanta_qtbl10.jpg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/docs/scales/quanta_qtbl10.jpeg' width='300px' alt='image missing' /> <br>
 <sub>Quanta QTBL10</sub>
 </th>
 <th>
