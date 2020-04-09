@@ -113,7 +113,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>-</td>
 </tr>
 <tr>
-<td>Hesley (Yunchen)</td>
+<td>Hesley (Yunchen) / Quanta QTBL10</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
