@@ -162,7 +162,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>-</td>
 </tr>
 <tr>
-<td>FitIndex ES-26M / Elektra Scale</td>
+<td>FitIndex ES-26M / Elektra Scale / RENPHO ES-CS20M</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
@@ -359,8 +359,8 @@ _Please select a scale for further information_
 <sub>Quanta QTBL10</sub>
 </th>
 <th>
- <br>
-<sub></sub>
+<img src='../raw/master/docs/scales/renpho_es-cs20m.jpg' width='300px' alt='image missing' /> <br>
+<sub>Renpho ES-CS20M</sub>
 </th>
 </tr>
 
