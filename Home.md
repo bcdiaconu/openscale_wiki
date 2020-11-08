@@ -6,7 +6,7 @@
 </p>
 -->
 
-# <img src="https://github.com/oliexdev/openScale/blob/master/fastlane/openScale/en-GB/images/icon.png" alt="openScale logo" height="45"/> [openScale](Home)
+# <img src="https://github.com/oliexdev/openScale/blob/master/fastlane/metadata/android/en-GB/images/icon.png" alt="openScale logo" height="45"/> [openScale](Home)
 
 *Open-source weight and body metrics tracker, with support for Bluetooth scales*
 
