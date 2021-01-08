@@ -10,6 +10,7 @@
   * [Trisa-Body-Analyze](Trisa-Body-Analyze)
   * [Xiaomi](Xiaomi-Bluetooth-Mi-Scale)
 * [Implemented body metric estimations](Body-metric-estimations)
+* [Useful import scripts](Useful-import-scripts)
 
 [openScale sync](openScale-sync)
 ---
