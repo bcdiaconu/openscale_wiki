@@ -162,7 +162,7 @@ If you want to help to support your Bluetooth scale please see [here](How-to-rev
 <td>-</td>
 </tr>
 <tr>
-<td>FitIndex ES-26M / Elektra Scale / RENPHO ES-CS20M</td>
+<td>FitIndex ES-26M / Elektra Scale / RENPHO ES-CS20M / RENPHO ES-30M</td>
 <td align="center">&#10003;</td>
 <td align="center">n/a</td>
 <td align="center">&#10003;</td>
