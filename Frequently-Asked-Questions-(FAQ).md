@@ -1,4 +1,5 @@
 * [My scale xyz is not supported why?](Frequently-Asked-Questions-(FAQ)#my-scale-xyz-is-not-supported-why)
+* [Why is my scale not found?](Frequently-Asked-Questions-(FAQ)#why-is-my-scale-not-found)
 * [Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?](Frequently-Asked-Questions-(FAQ)#why-are-the-measurements-are-not-synchronise-to-a-cloud-eg-google-fit--garmin-connect--dropbox-and-so-on)
 * [What are the differences between the openScale pro/light and the f-droid version?](Frequently-Asked-Questions-(FAQ)#what-are-the-differences-between-the-openscale-prolight-and-the-f-droid-version)
 * [Why is my language xyz is missing or incomplete?](Frequently-Asked-Questions-(FAQ)#why-is-my-language-xyz-is-missing-or-incomplete)
@@ -10,6 +11,10 @@
 ## My scale xyz is not supported why?
 
 I don't own every scale. But openScale is open source and lives from the open source community if you want to help you could try to reverse engineer your scale by analysing the Bluetooth 4.x protocol between your scale and the original vendor app, see [Bluetooth 4.x Reverse Engineer tutorial](How-to-reverse-engineer-a-Bluetooth-4.x-scale) for further information. If you understand the protocol then it is not complicated to implement it into openScale.
+
+## Why is my scale not found?
+
+If you scale name is not shown up during the search at _Settings->Bluetooth->Your Bluetooth scale_ then you must first unpair the scale with your smartphone in the Android bluetooth settings or with an installed vendor app. Please also make sure that your scale is turned on and you granted the coarse location permission during the search. Finally check that the batteries of your scale are full enough.
 
 ## Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?
 
