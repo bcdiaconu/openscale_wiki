@@ -14,7 +14,7 @@ I don't own every scale. But openScale is open source and lives from the open so
 
 ## Why is my scale not found?
 
-If you scale name is not shown up during the search at _Settings->Bluetooth->Your Bluetooth scale_ then you must first unpair the scale with your smartphone in the Android bluetooth settings or with an installed vendor app. Please also make sure that your scale is turned on and you granted the coarse location permission during the search. Finally check that the batteries of your scale are full enough.
+If you scale name is not shown up in openScale during the search at _Settings->Bluetooth->Your Bluetooth scale_ then you must first unpair the scale with your smartphone in the Android bluetooth settings or with an installed vendor app. Please also make sure that your scale is turned on and you granted the coarse location permission during the search. Finally check that the batteries of your scale are full enough.
 
 ## Why are the measurements are not synchronise to a cloud (e.g. Google fit / Garmin Connect / Dropbox and so on)?
 
