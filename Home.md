@@ -27,8 +27,9 @@
 
 # ![openScale sync logo](https://github.com/oliexdev/openScale/blob/master/docs/sync/openscale_sync.png) [openScale sync](openScale-sync)
 
-_Synchronise your openScale weight data to GoogleFit and/or MQTT._
+_Synchronise your openScale weight data to GoogleFit, wger and/or MQTT._
 
 
 * [MQTT 3.1 support](MQTT-support)
+* [wger support](wger-support)
 
