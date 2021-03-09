@@ -28,19 +28,30 @@ First package is send from UUID `0x8a21` as follow:
 
 `1d:80:25:00:fe:80:0f:f4:0d:6a:17:00:ff:01:09:00:00:00:00`
 
-* byte 0: unknown
+* byte 0: flag byte
+```
+    Bit 2^5 and Bit 2^6 are the unit.
+    1d = 0001 1101
+    3d = 0011 1101
+    5d = 0101 1101
+    Bit 5+6: Unit (00=kg, 01=lb, 10=st:lb) also affects weight divider kg=100.
+```
+The other are maybe something like timePresent, userPresent, measurePresent, scorePresent. But this is just from comparison with other BLE characteristic.
+
 * byte 1-2: weight in little endian / 100
 * byte 3-4: unknown
 * byte 5-8: unix date/time stamp in little endian starting from year 2010
-* byte 9-18: unknown
+* byte 9-12: unknown
+* byte 13: user id. The scale knows users from 1 to 8. 0xFF = unset/free without user reference. When user != 0xFF the bytes 9+10 are some user scoring based on gender, activity, size and age.
+* byte 14-18: unknown
 
 Second package is send from UUID `0x8a22` as follow:
 
 `6f:80:0f:f4:0d:01:21:0c:57:f1:e3:f1:5b:f1:23:f0:00:00:00`
 
-* byte 0: unknown
+* byte 0: flag byte
 * byte 1-4: unix date/time stamp in little endian starting from year 2010
-* byte 5: unknown
+* byte 5: user
 * byte 6-7: kCal in little endian
 * byte 8-9: fat percentage in little endian / 10 and first byte is masked with 0xF0
 * byte 10-11: water percentage in little endian / 10 and first byte is masked with 0xF0
