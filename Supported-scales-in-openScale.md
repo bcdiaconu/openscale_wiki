@@ -366,7 +366,7 @@ _Please select a scale for further information_
 
 <tr>
 <th>
-<img src='../raw/master/docs/scales/kamtron_cs20m.jpeg' width='300px' alt='image missing' /> <br>
+<img src='../raw/master/docs/scales/kamtron_cs20m.jpg' width='300px' alt='image missing' /> <br>
 <sub>Kamtrion CS20M</sub>
 </th>
 <th>
